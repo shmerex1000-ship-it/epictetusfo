@@ -920,26 +920,46 @@
       .nav-wrap { min-height: 66px; }
     }
   
-    /* GitHub Pages + mobile hardening */
+    /* === Final production mobile + GitHub Pages image fix === */
     html, body {
       width: 100%;
       max-width: 100%;
       overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
-    .premium-visual img,
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .hero-card img,
-    .image-panel img {
+    .image-panel img,
+    .premium-visual img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
       max-width: none;
     }
 
-    .btns {
+    .container,
+    .panel,
+    .pricing,
+    .cta-band,
+    .level-card,
+    .compare-card,
+    .architecture-card,
+    .architecture-compact-card,
+    .offer-item,
+    .premium-note,
+    .premium-visual,
+    .hero-card,
+    .image-panel,
+    .hero-copy,
+    .section-title {
       min-width: 0;
     }
 
@@ -948,92 +968,77 @@
       text-align: center;
     }
 
-    .premium-split,
-    .architecture-premium-grid,
-    .architecture-intro-grid,
-    .twr-box,
-    .offer-grid,
-    .audience-grid,
-    .difference-grid,
-    .grid-2,
-    .hero-grid,
-    .pricing-grid,
-    .manifesto-grid,
-    .architecture-grid,
-    .architecture-cards,
-    .hero-trust,
-    .offer-list {
-      min-width: 0;
-    }
-
-    .panel,
-    .premium-note,
-    .compare-card,
-    .architecture-compact-card,
-    .architecture-card,
-    .level-card,
-    .offer-item,
-    .pricing {
-      min-width: 0;
-    }
-
     @media (max-width: 1080px) {
+      .hero-grid,
+      .grid-2,
       .premium-split,
       .architecture-premium-grid,
       .architecture-intro-grid,
-      .twr-box,
-      .offer-grid,
-      .audience-grid,
-      .difference-grid,
-      .grid-2,
-      .hero-grid,
-      .pricing-grid,
-      .manifesto-grid,
       .architecture-grid,
       .architecture-cards,
-      .hero-trust,
-      .offer-list {
+      .architecture-compact-cards,
+      .offer-grid,
+      .offer-list,
+      .difference-grid,
+      .twr-box,
+      .audience-grid,
+      .pricing-grid,
+      .manifesto-grid,
+      .hero-trust {
         grid-template-columns: 1fr !important;
       }
 
-      .premium-visual,
-      .premium-pricing-visual,
-      .hero-card,
-      .image-panel {
-        min-height: 360px !important;
+      nav {
+        display: none !important;
       }
 
-      .cta-band {
-        margin-left: 0;
-        margin-right: 0;
+      .hero-card,
+      .image-panel,
+      .premium-visual,
+      .premium-pricing-visual {
+        min-height: 380px !important;
+      }
+
+      .architecture-premium-grid {
+        gap: 22px !important;
       }
     }
 
     @media (max-width: 720px) {
-      body {
-        line-height: 1.55;
-      }
-
       .container {
         width: min(calc(100% - 24px), var(--max)) !important;
       }
 
+      .nav-wrap {
+        min-height: 66px !important;
+      }
+
       .hero {
-        padding: 52px 0 32px !important;
+        padding: 50px 0 28px !important;
       }
 
       .section {
-        padding: 30px 0 !important;
+        padding: 28px 0 !important;
       }
 
       .hero-copy h1 {
-        font-size: clamp(2.35rem, 12vw, 3.25rem) !important;
-        max-width: 100%;
+        font-size: clamp(2.2rem, 11.5vw, 3.15rem) !important;
+        max-width: 100% !important;
+        line-height: 1 !important;
+      }
+
+      .hero-copy p.lead {
+        font-size: 1rem !important;
+      }
+
+      .section-title {
+        margin-bottom: 22px !important;
       }
 
       .section-title h2,
       .cta-content h2 {
-        font-size: clamp(1.75rem, 8.5vw, 2.35rem) !important;
+        font-size: clamp(1.68rem, 8vw, 2.3rem) !important;
+        line-height: 1.08 !important;
       }
 
       .panel,
@@ -1041,17 +1046,30 @@
       .cta-band,
       .level-card,
       .compare-card,
+      .architecture-card,
       .architecture-compact-card,
-      .premium-note {
+      .premium-note,
+      .offer-item {
         padding: 20px !important;
         border-radius: 20px !important;
       }
 
       .hero-card,
+      .image-panel,
       .premium-visual,
-      .premium-pricing-visual,
-      .image-panel {
-        min-height: 300px !important;
+      .premium-pricing-visual {
+        min-height: 310px !important;
+      }
+
+      .hero-plaque {
+        left: 14px !important;
+        right: 14px !important;
+        bottom: 14px !important;
+        padding: 16px !important;
+      }
+
+      .hero-plaque .metric-grid {
+        grid-template-columns: 1fr !important;
       }
 
       .btns {
@@ -1069,31 +1087,26 @@
         width: 100%;
         align-items: flex-start;
         justify-content: flex-start;
-        border-radius: 18px;
         flex-direction: column;
+        border-radius: 18px;
         gap: 6px;
       }
 
-      .hero-plaque {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        padding: 16px;
-      }
-
-      .hero-plaque .metric-grid {
-        grid-template-columns: 1fr !important;
-      }
-
-      .premium-visual-caption {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        padding: 12px 14px;
+      .premium-visual-caption,
+      .image-caption {
+        left: 14px !important;
+        right: 14px !important;
+        bottom: 14px !important;
+        padding: 12px 14px !important;
+        max-width: calc(100% - 28px);
       }
 
       .price {
         font-size: clamp(3rem, 16vw, 4rem) !important;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr !important;
       }
     }
 
