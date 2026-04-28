@@ -931,6 +931,7 @@
           
           <p>Stoicism was not invented to “generate alpha”. But one of our goals is to show, in practice, how easily it can do exactly that when you treat it as a practical tool — in our case, inside a real financial business.</p>
 
+
       </div>
 
       </div>
@@ -943,6 +944,44 @@
   </div>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section style="padding:0;margin:0;">
+      <div style="width:100%;padding:clamp(30px,5vw,56px) clamp(18px,4vw,48px);background:linear-gradient(180deg,rgba(31,28,24,0.98),rgba(20,22,27,0.98));border-top:1px solid rgba(159,128,80,0.18);border-bottom:1px solid rgba(159,128,80,0.18);">
+        <div style="max-width:1180px;margin:0 auto;">
+          <div class="twr-eyebrow">Live Performance Record</div>
+          <h2 style="color:#f4efe6;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-0.03em;font-weight:600;margin:0 0 10px;">Time-Weighted Return — 2026 YTD</h2>
+          <p class="twr-sub">Daily cumulative TWR sourced directly from Interactive Brokers PortfolioAnalyst. Long book, short book, and total portfolio — every session documented without revision.</p>
+          <div class="twr-stats" style="grid-template-columns:repeat(4,minmax(0,1fr));">
+            <div class="twr-stat">
+              <div class="twr-stat-label">Account</div>
+              <div class="twr-stat-value">Stoic Core</div>
+            </div>
+            <div class="twr-stat">
+              <div class="twr-stat-label">Period</div>
+              <div class="twr-stat-value">1 Jan – 27 Apr 2026</div>
+            </div>
+            <div class="twr-stat">
+              <div class="twr-stat-label">Max drawdown</div>
+              <div class="twr-stat-value neg">−8.08%</div>
+            </div>
+            <div class="twr-stat" style="border-color:#1d9e75;">
+              <div class="twr-stat-label">TWR total</div>
+              <div class="twr-stat-value" style="color:#4dc49a;">+8.84%</div>
+            </div>
+          </div>
+          <div class="twr-panel">
+            <div class="twr-legend">
+              <span><span class="twr-legend-line" style="background:#c9ab6d;"></span>Long</span>
+              <span><span class="twr-legend-line" style="background:#d85a30;"></span>Short</span>
+              <span><span class="twr-legend-line" style="background:#1d9e75;height:3px;"></span>Total</span>
+            </div>
+            <div class="twr-chart-wrap">
+              <canvas id="twrChart" role="img" aria-label="Cumulative TWR Stoic Core Interactive Jan-Apr 2026. Final: +8.84%">Cumulative TWR: dips to -8.08% end of March, recovers to +8.84% by 27 Apr 2026.</canvas>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1096,5 +1135,68 @@
     <div class="wrap">Epictetus FO</div>
   </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  if (!document.getElementById('twrChart')) return;
+  var data = [
+    ["Jan 01",0,0,0],["Jan 02",0.139,-0.070,0.069],["Jan 05",0.749,-0.001,0.748],
+    ["Jan 06",1.817,-0.271,1.544],["Jan 07",1.224,-0.206,1.018],["Jan 08",1.021,-0.163,0.859],
+    ["Jan 09",1.676,-0.063,1.615],["Jan 12",1.410,-0.007,1.405],["Jan 13",0.942,0.037,0.981],
+    ["Jan 14",0.065,0.076,0.143],["Jan 15",0.710,0.120,0.834],["Jan 16",0.870,0.134,1.008],
+    ["Jan 19",0.864,0.134,1.002],["Jan 20",-1.165,0.058,-1.107],["Jan 21",0.352,0.049,0.403],
+    ["Jan 22",2.219,-0.020,2.201],["Jan 23",2.896,-0.074,2.824],["Jan 26",3.580,-0.126,3.453],
+    ["Jan 27",3.858,-0.208,3.645],["Jan 28",3.519,-0.296,3.216],["Jan 29",5.183,-0.671,4.488],
+    ["Jan 30",4.357,-0.448,3.901],["Feb 02",4.863,-0.422,4.431],["Feb 03",3.434,-0.418,3.012],
+    ["Feb 04",1.955,-0.720,1.228],["Feb 05",0.677,-0.857,-0.180],["Feb 06",2.398,-0.433,1.952],
+    ["Feb 09",3.053,-0.300,2.741],["Feb 10",2.552,-0.275,2.266],["Feb 11",3.159,-0.294,2.853],
+    ["Feb 12",2.016,-0.447,1.556],["Feb 13",1.975,-0.359,1.605],["Feb 16",1.974,-0.359,1.604],
+    ["Feb 17",1.596,-0.245,1.342],["Feb 18",2.429,-0.208,2.211],["Feb 19",2.344,-0.099,2.238],
+    ["Feb 20",2.936,-0.085,2.844],["Feb 23",1.479,-0.186,1.283],["Feb 24",2.042,-0.102,1.932],
+    ["Feb 25",3.063,-0.012,3.043],["Feb 26",2.496,0.177,2.671],["Feb 27",1.840,0.070,1.905],
+    ["Mar 02",2.352,0.113,2.460],["Mar 03",1.320,0.073,1.386],["Mar 04",2.640,0.165,2.799],
+    ["Mar 05",2.302,0.182,2.479],["Mar 06",0.715,-0.063,0.639],["Mar 09",1.718,0.161,1.866],
+    ["Mar 10",1.862,0.231,2.083],["Mar 11",2.025,0.234,2.248],["Mar 12",0.282,0.368,0.639],
+    ["Mar 13",-0.229,0.316,0.074],["Mar 16",0.740,0.461,1.190],["Mar 17",0.978,0.474,1.440],
+    ["Mar 18",-0.257,0.391,0.116],["Mar 19",-0.838,0.486,-0.372],["Mar 20",-2.787,0.361,-2.454],
+    ["Mar 23",-1.932,0.480,-1.481],["Mar 24",-2.809,0.383,-2.456],["Mar 25",-2.534,0.338,-2.225],
+    ["Mar 26",-5.087,-0.029,-5.143],["Mar 27",-7.047,-0.324,-7.382],["Mar 30",-7.516,-0.573,-8.081],
+    ["Mar 31",-4.389,0.002,-4.441],["Apr 01",-3.121,0.229,-2.956],["Apr 02",-2.942,0.295,-2.713],
+    ["Apr 03",-2.942,0.295,-2.713],["Apr 06",-2.373,0.439,-2.003],["Apr 07",-1.837,0.395,-1.509],
+    ["Apr 08",1.259,0.632,1.831],["Apr 09",1.951,0.537,2.430],["Apr 10",1.774,0.652,2.370],
+    ["Apr 13",2.823,0.628,3.400],["Apr 14",4.703,0.190,4.840],["Apr 15",5.447,0.088,5.479],
+    ["Apr 16",5.894,0.125,5.965],["Apr 17",7.267,0.067,7.277],["Apr 20",6.877,0.165,6.993],
+    ["Apr 21",6.694,0.124,6.766],["Apr 22",8.065,-0.214,7.778],["Apr 23",7.446,-0.071,7.314],
+    ["Apr 24",8.465,-0.207,8.186],["Apr 27",9.324,-0.395,8.838]
+  ];
+  new Chart(document.getElementById('twrChart'), {
+    type: 'line',
+    data: {
+      labels: data.map(function(d){return d[0];}),
+      datasets: [
+        {label:'Long', data:data.map(function(d){return d[1];}), borderColor:'#c9ab6d', borderWidth:1.5, pointRadius:0, pointHoverRadius:4, fill:false, tension:0.2, spanGaps:true, borderDash:[4,3]},
+        {label:'Short', data:data.map(function(d){return d[2];}), borderColor:'#d85a30', borderWidth:1.5, pointRadius:0, pointHoverRadius:4, fill:false, tension:0.2, spanGaps:true, borderDash:[2,3]},
+        {label:'Total', data:data.map(function(d){return d[3];}), borderColor:'#1d9e75', borderWidth:2.5, pointRadius:0, pointHoverRadius:5, fill:{target:'origin',above:'rgba(29,158,117,0.07)',below:'rgba(163,45,45,0.08)'}, tension:0.2}
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'rgba(8,13,21,0.92)', borderColor:'rgba(201,171,109,0.2)', borderWidth:1,
+          titleColor:'#d8d0c4', bodyColor:'#a8b2c4', padding:10,
+          callbacks:{label:function(ctx){return '  '+ctx.dataset.label+':  '+ctx.parsed.y.toFixed(2)+'%';}}
+        }
+      },
+      scales:{
+        x:{grid:{color:'rgba(255,255,255,0.05)'}, ticks:{color:'#a8b2c4',font:{size:10},autoSkip:true,maxTicksLimit:14,maxRotation:45}},
+        y:{grid:{color:'rgba(255,255,255,0.05)'}, ticks:{color:'#a8b2c4',font:{size:11},callback:function(v){return v.toFixed(1)+'%';}}}
+      }
+    }
+  });
+})();
+</script>
 </body>
 </html>
