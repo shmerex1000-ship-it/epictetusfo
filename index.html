@@ -894,9 +894,24 @@
           <small>Epictetus, Stoic philosopher (c. 50–135 AD), author of the Enchiridion.</small>
         </div>
       </div>
-      <figure class="hero-image" aria-label="Stoic statue holding a financial maxim">
-        <img src="assets/01-marcus-aurelius.jpg" alt="Marcus Aurelius inspired statue with scroll" />
-      </figure>
+      <div class="hero-image" style="display:flex;flex-direction:column;justify-content:space-between;padding:28px 28px 22px;background:linear-gradient(180deg,rgba(31,28,24,0.98),rgba(20,22,27,0.98));border:1px solid rgba(159,128,80,0.22);">
+        <div>
+          <div class="twr-eyebrow" style="margin-bottom:14px;">Live Performance Record</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:20px;">
+            <div class="twr-stat"><div class="twr-stat-label">Period</div><div class="twr-stat-value" style="font-size:.9rem;">1 Jan – 27 Apr 2026</div></div>
+            <div class="twr-stat"><div class="twr-stat-label">Max drawdown</div><div class="twr-stat-value neg" style="font-size:.9rem;">−8.08%</div></div>
+            <div class="twr-stat" style="grid-column:1/-1;border-color:#1d9e75;"><div class="twr-stat-label">TWR total</div><div class="twr-stat-value" style="color:#4dc49a;font-size:1.3rem;">+8.84%</div></div>
+          </div>
+          <div class="twr-legend" style="margin-bottom:12px;">
+            <span><span class="twr-legend-line" style="background:#c9ab6d;"></span>Long</span>
+            <span><span class="twr-legend-line" style="background:#d85a30;"></span>Short</span>
+            <span><span class="twr-legend-line" style="background:#1d9e75;height:3px;"></span>Total</span>
+          </div>
+        </div>
+        <div style="position:relative;width:100%;flex:1;min-height:300px;">
+          <canvas id="twrChart" role="img" aria-label="Cumulative TWR Stoic Core Jan-Apr 2026. Final: +8.84%">TWR ends at +8.84%.</canvas>
+        </div>
+      </div>
     </header>
 
     <section>
@@ -947,43 +962,6 @@
       </div>
     </section>
 
-    <section style="padding:0;margin:0;">
-      <div style="width:100%;padding:clamp(30px,5vw,56px) clamp(18px,4vw,48px);background:linear-gradient(180deg,rgba(31,28,24,0.98),rgba(20,22,27,0.98));border-top:1px solid rgba(159,128,80,0.18);border-bottom:1px solid rgba(159,128,80,0.18);">
-        <div style="max-width:1180px;margin:0 auto;">
-          <div class="twr-eyebrow">Live Performance Record</div>
-          <h2 style="color:#f4efe6;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-0.03em;font-weight:600;margin:0 0 10px;">Time-Weighted Return — 2026 YTD</h2>
-          <p class="twr-sub">Daily cumulative TWR sourced directly from Interactive Brokers PortfolioAnalyst. Long book, short book, and total portfolio — every session documented without revision.</p>
-          <div class="twr-stats" style="grid-template-columns:repeat(4,minmax(0,1fr));">
-            <div class="twr-stat">
-              <div class="twr-stat-label">Account</div>
-              <div class="twr-stat-value">Stoic Core</div>
-            </div>
-            <div class="twr-stat">
-              <div class="twr-stat-label">Period</div>
-              <div class="twr-stat-value">1 Jan – 27 Apr 2026</div>
-            </div>
-            <div class="twr-stat">
-              <div class="twr-stat-label">Max drawdown</div>
-              <div class="twr-stat-value neg">−8.08%</div>
-            </div>
-            <div class="twr-stat" style="border-color:#1d9e75;">
-              <div class="twr-stat-label">TWR total</div>
-              <div class="twr-stat-value" style="color:#4dc49a;">+8.84%</div>
-            </div>
-          </div>
-          <div class="twr-panel">
-            <div class="twr-legend">
-              <span><span class="twr-legend-line" style="background:#c9ab6d;"></span>Long</span>
-              <span><span class="twr-legend-line" style="background:#d85a30;"></span>Short</span>
-              <span><span class="twr-legend-line" style="background:#1d9e75;height:3px;"></span>Total</span>
-            </div>
-            <div class="twr-chart-wrap">
-              <canvas id="twrChart" role="img" aria-label="Cumulative TWR Stoic Core Interactive Jan-Apr 2026. Final: +8.84%">Cumulative TWR: dips to -8.08% end of March, recovers to +8.84% by 27 Apr 2026.</canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section>
       <div class="wrap">
