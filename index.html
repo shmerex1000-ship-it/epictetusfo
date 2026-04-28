@@ -3,1654 +3,1098 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Epictetus FO – The Stoic Discipline of Long-Term Capital</title>
-  <meta name="description" content="A premium landing page for Epictetus Family Office – a public 25-year portfolio experiment built on Stoic philosophy, behavioural finance, and disciplined long-term capital allocation." />
+  <meta name="description" content="Epictetus FO – a family office landing page built on Stoic discipline, long-term capital and transparent execution." />
+  <title>Epictetus FO</title>
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-2: #101a2c;
-      --panel: rgba(247, 241, 231, 0.06);
-      --panel-strong: rgba(247, 241, 231, 0.1);
-      --ivory: #f4efe6;
-      --ivory-soft: #d8d0c4;
-      --gold: #c9ab6d;
-      --gold-soft: #9f8454;
-      --line: rgba(201, 171, 109, 0.22);
-      --muted: #a8b2c4;
-      --deep-shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
-      --radius: 22px;
-      --radius-sm: 16px;
-      --max: 1240px;
+      --ivory: #fbf7ef;
+      --ivory-2: #f5eddf;
+      --beige: #e9ddc9;
+      --sand: #d8c4a4;
+      --text: #201c17;
+      --muted: #706657;
+      --gold: #9f8050;
+      --gold-soft: rgba(159, 128, 80, 0.22);
+      --line: rgba(32, 28, 23, 0.12);
+      --card: rgba(255, 253, 248, 0.82);
+      --shadow: 0 22px 70px rgba(32, 28, 23, 0.10);
+      --radius: 28px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
       background:
-        radial-gradient(circle at top, rgba(201, 171, 109, 0.08), transparent 32%),
-        linear-gradient(180deg, #07101c 0%, #0b1220 35%, #0c1525 100%);
-      color: var(--ivory);
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.65));
-      opacity: 0.35;
+        radial-gradient(circle at top left, rgba(216, 196, 164, 0.32), transparent 34rem),
+        linear-gradient(180deg, var(--ivory) 0%, #fffdf8 44%, var(--ivory-2) 100%);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
+    a { color: inherit; }
 
-    .container {
-      width: min(calc(100% - 40px), var(--max));
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(244, 239, 230, 0.03);
-      color: var(--ivory-soft);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--gold);
-      box-shadow: 0 0 14px rgba(201,171,109,.6);
-    }
-
-    header.site-header {
-      position: sticky;
-      top: 0;
+    .nav {
+      position: fixed;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(7, 16, 28, 0.72);
-      border-bottom: 1px solid rgba(201, 171, 109, 0.12);
-    }
-
-    .nav-wrap {
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1120px, calc(100% - 32px));
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      min-height: 74px;
+      align-items: center;
+      padding: 13px 18px;
+      border: 1px solid rgba(32, 28, 23, 0.10);
+      border-radius: 999px;
+      background: rgba(251, 247, 239, 0.78);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 40px rgba(32, 28, 23, 0.08);
     }
 
     .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
     }
 
-    .brand-name {
-      font-size: 1rem;
+    .nav-note {
+      font-size: 12px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--ivory);
-    }
-
-    .brand-sub {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      font-size: 0.95rem;
-      color: var(--ivory-soft);
-    }
-
-    nav a { opacity: 0.9; }
-    nav a:hover { opacity: 1; color: var(--ivory); }
-
-    .btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-      box-shadow: var(--deep-shadow);
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-primary {
-      color: #14110d;
-      background: linear-gradient(180deg, #d9bf84 0%, #b89551 100%);
-      border-color: rgba(255,255,255,0.16);
-    }
-
-    .btn-secondary {
-      background: rgba(244, 239, 230, 0.04);
-      border-color: rgba(244, 239, 230, 0.14);
-      color: var(--ivory);
+      color: var(--gold);
     }
 
     .hero {
-      padding: 88px 0 54px;
-    }
-
-    .hero-grid {
+      min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 40px;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: clamp(34px, 5vw, 76px);
       align-items: center;
+      padding: 120px 0 82px;
     }
 
-    .hero-copy h1 {
-      font-size: clamp(2.8rem, 5vw, 5.2rem);
-      line-height: 0.98;
-      margin: 18px 0 18px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      max-width: 11.2ch;
-    }
-
-    .hero-copy .headline-accent {
-      display: block;
+    .eyebrow {
       color: var(--gold);
-      font-size: clamp(1rem, 1.6vw, 1.25rem);
-      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      margin-bottom: 26px;
     }
 
-    .hero-copy p.lead {
-      max-width: 60ch;
-      margin: 0 0 28px;
-      color: var(--ivory-soft);
-      font-size: 1.1rem;
-    }
-
-    .hero-trust {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .trust-item {
-      padding: 16px 18px;
-      border: 1px solid rgba(244,239,230,.08);
-      background: rgba(244,239,230,.03);
-      border-radius: 18px;
-      color: var(--ivory-soft);
-      font-size: 0.92rem;
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid rgba(201,171,109,.2);
-      background: #0b1322;
-      box-shadow: var(--deep-shadow);
-      min-height: 640px;
-    }
-
-    .hero-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.92) contrast(1.02);
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8, 13, 21, 0.05) 0%, rgba(8, 13, 21, 0.38) 45%, rgba(8, 13, 21, 0.88) 100%),
-        linear-gradient(90deg, rgba(8,13,21,.42) 0%, rgba(8,13,21,.1) 35%, rgba(8,13,21,.36) 100%);
-    }
-
-    .hero-plaque {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 22px;
-      z-index: 2;
-      padding: 22px;
-      border-radius: 20px;
-      background: rgba(8, 13, 21, 0.62);
-      border: 1px solid rgba(201,171,109,.18);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-plaque .metric-title {
-      color: var(--ivory-soft);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 10px;
-    }
-
-    .hero-plaque .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1.5rem;
-      color: var(--ivory);
-      margin-bottom: 4px;
-    }
-
-    .metric span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .section {
-      padding: 42px 0;
-    }
-
-    .section-title {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 28px;
-      max-width: 780px;
-    }
-
-    .section-title h2 {
+    h1, h2, h3 {
       margin: 0;
-      font-size: clamp(2rem, 3vw, 3.15rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
       line-height: 1.04;
-      letter-spacing: -0.03em;
-      font-weight: 600;
     }
 
-    .section-title p {
-      margin: 0;
-      color: var(--ivory-soft);
-      font-size: 1.03rem;
+    h1 {
+      font-size: clamp(43px, 6.4vw, 86px);
+      max-width: 850px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 30px;
-      align-items: stretch;
+    h2 {
+      font-size: clamp(32px, 4.6vw, 62px);
+      margin-bottom: 26px;
     }
 
-    .panel {
-      border-radius: var(--radius);
-      border: 1px solid rgba(201,171,109,.13);
-      background: linear-gradient(180deg, rgba(244,239,230,.05), rgba(244,239,230,.03));
-      padding: 28px;
-      box-shadow: var(--deep-shadow);
-    }
-
-    .panel p:last-child { margin-bottom: 0; }
-    .muted { color: var(--ivory-soft); }
-
-    .split-points {
-      display: grid;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .point {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .point .num {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(201,171,109,.13);
-      border: 1px solid rgba(201,171,109,.22);
-      color: var(--gold);
-      font-size: 0.85rem;
-    }
-
-    .image-panel {
-      position: relative;
-      overflow: hidden;
-      min-height: 540px;
-      padding: 0;
-    }
-
-    .image-panel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.88);
-    }
-
-    .image-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(8,13,21,.06), rgba(8,13,21,.44) 72%, rgba(8,13,21,.72));
-    }
-
-    .image-caption {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 22px;
-      z-index: 2;
-      color: var(--ivory);
-      font-size: 0.95rem;
-      max-width: 28ch;
-    }
-
-    .manifesto-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .level-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 250px;
-      padding: 26px;
-      border-radius: 24px;
-      border: 1px solid rgba(201,171,109,.14);
-      background: linear-gradient(180deg, rgba(244,239,230,.05), rgba(244,239,230,.025));
-      box-shadow: var(--deep-shadow);
-    }
-
-    .level-card.public { border-color: rgba(109, 147, 201, 0.25); }
-    .level-card.paid { border-color: rgba(201,171,109,.22); }
-
-    .level-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+    h3 {
+      font-size: clamp(24px, 2.7vw, 34px);
       margin-bottom: 16px;
-      background: rgba(244,239,230,.04);
-      border: 1px solid rgba(244,239,230,.1);
-      color: var(--ivory-soft);
     }
 
-    .level-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.35rem;
-      line-height: 1.18;
-    }
-
-    .level-card p {
-      margin: 0;
-      color: var(--ivory-soft);
-      font-size: 0.98rem;
-    }
-
-    .offer-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-    }
-
-    .offer-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .offer-item {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(244,239,230,.04);
-      border: 1px solid rgba(244,239,230,.08);
-      color: var(--ivory-soft);
-    }
-
-    .offer-item strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--ivory);
-      font-size: 1rem;
-    }
-
-    .difference-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .compare-card {
-      padding: 24px;
-      border-radius: 22px;
-      background: rgba(244,239,230,.04);
-      border: 1px solid rgba(244,239,230,.09);
-    }
-
-    .compare-card h3 {
-      margin: 0 0 16px;
-      font-size: 1.2rem;
-    }
-
-    .simple-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-      color: var(--ivory-soft);
-    }
-
-    .simple-list li {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .simple-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.7em;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--gold);
-      opacity: 0.85;
-    }
-
-    .twr-box {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .quote-block {
-      font-size: 1.18rem;
-      color: var(--ivory);
-      line-height: 1.55;
-    }
-
-    .quote-block strong { color: var(--gold); }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .pricing {
-      position: relative;
-      overflow: hidden;
-      padding: 34px;
-      border-radius: 30px;
-      border: 1px solid rgba(201,171,109,.2);
-      background:
-        radial-gradient(circle at top right, rgba(201,171,109,.15), transparent 24%),
-        linear-gradient(180deg, rgba(244,239,230,.06), rgba(244,239,230,.03));
-      box-shadow: var(--deep-shadow);
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 26px;
-      align-items: center;
-    }
-
-    .price {
-      font-size: clamp(3.4rem, 6vw, 5rem);
-      line-height: 1;
-      margin: 10px 0 8px;
-      color: var(--ivory);
-    }
-
-    .price small {
-      font-size: 1.05rem;
-      color: var(--ivory-soft);
-      margin-left: 6px;
-    }
-
-    .pricing .reassure {
-      color: var(--ivory-soft);
-      font-size: 0.98rem;
-      margin-top: 10px;
-    }
-
-    .cta-band {
-      margin: 46px 0 80px;
-      padding: 42px;
-      border-radius: 34px;
-      border: 1px solid rgba(201,171,109,.18);
-      background:
-        linear-gradient(180deg, rgba(244,239,230,.05), rgba(244,239,230,.025)),
-        url('images/img01.jpg') center/cover no-repeat;
-      position: relative;
-      overflow: hidden;
-      box-shadow: var(--deep-shadow);
-    }
-
-    .cta-band::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(8,13,21,.92) 0%, rgba(8,13,21,.78) 45%, rgba(8,13,21,.76) 100%);
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 1;
+    .subtitle {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(20px, 2vw, 25px);
       max-width: 760px;
     }
 
-    .cta-content h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 1.05;
+    p { margin: 0 0 18px; }
+
+    .quote {
+      margin: 32px 0 0;
+      padding: 22px 0 22px 24px;
+      border-left: 2px solid var(--gold);
+      font-size: clamp(20px, 2vw, 25px);
+      line-height: 1.42;
+      color: #2a241d;
+      max-width: 760px;
     }
 
-    footer {
-      padding: 0 0 54px;
+    .quote small {
+      display: block;
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.55;
       color: var(--muted);
-      font-size: 0.92rem;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: end;
-      border-top: 1px solid rgba(201,171,109,.12);
-      padding-top: 24px;
-    }
-
-    .small-caps {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.75rem;
-      color: var(--ivory-soft);
-    }
-
-    .divider {
-      height: 1px;
-      margin: 12px 0 0;
-      background: linear-gradient(90deg, rgba(201,171,109,0), rgba(201,171,109,.22), rgba(201,171,109,0));
-    }
-
-
-    .architecture-grid {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .architecture-cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .architecture-card {
-      padding: 22px;
-      border-radius: 22px;
-      background: rgba(244,239,230,.04);
-      border: 1px solid rgba(244,239,230,.08);
-      box-shadow: var(--deep-shadow);
-      min-height: 100%;
-    }
-
-    .architecture-card .alloc {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--gold);
-      font-size: 1.35rem;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-
-    .architecture-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.16rem;
-      line-height: 1.18;
-    }
-
-    .architecture-card p {
-      margin: 0;
-      color: var(--ivory-soft);
-      font-size: 0.96rem;
-    }
-
-    .architecture-foot {
-      margin-top: 22px;
-    }
-
-    .micro-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(201,171,109,.16);
-      background: rgba(244,239,230,.03);
-      color: var(--ivory-soft);
-      font-size: 0.9rem;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .micro-cta:hover {
-      transform: translateY(-1px);
-      border-color: rgba(201,171,109,.28);
-      background: rgba(244,239,230,.05);
-      color: var(--ivory);
-    }
-
-    .micro-cta strong {
-      color: var(--ivory);
-      font-weight: 600;
-    }
-
-
-    .premium-split {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .premium-copy-stack {
-      display: grid;
-      gap: 16px;
-    }
-
-    .premium-note {
-      padding: 20px;
-      border-radius: 20px;
-      border: 1px solid rgba(201,171,109,.11);
-      background: rgba(8,13,21,.22);
-    }
-
-    .premium-note p {
-      margin: 0;
-      color: var(--ivory-soft);
-      font-size: 0.98rem;
-    }
-
-    .premium-note strong {
-      color: var(--ivory);
-      font-weight: 600;
-    }
-
-    .premium-visual {
-      position: relative;
-      overflow: hidden;
-      min-height: 100%;
+    .hero-image, .framed-img {
       border-radius: var(--radius);
-      border: 1px solid rgba(201,171,109,.16);
-      background: #0b1322;
-      box-shadow: var(--deep-shadow);
-      isolation: isolate;
+      overflow: hidden;
+      border: 1px solid var(--gold-soft);
+      background: var(--beige);
+      box-shadow: var(--shadow);
     }
 
-    .premium-visual img {
-      position: absolute;
-      inset: 0;
+    .hero-image img {
+      width: 100%;
+      height: min(720px, 72vh);
+      object-fit: cover;
+    }
+
+    .framed-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(.86) contrast(1.04);
-      transform: scale(1.01);
     }
 
-    .premium-visual::after {
+    .wide-img { aspect-ratio: 16 / 7; }
+    .portrait-img { aspect-ratio: 4 / 5; }
+
+    .side-image {
+      margin-top: 28px;
+      width: min(100%, 420px);
+      aspect-ratio: 4 / 5;
+      border-radius: 28px;
+      position: static;
+    }
+
+    .side-image.wide-side {
+      aspect-ratio: 4 / 5;
+    }
+
+    .side-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .single-content {
+      max-width: 860px;
+    }
+
+    section {
+      padding: clamp(58px, 8vw, 112px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .content {
+      font-size: clamp(18px, 1.22vw, 20px);
+      max-width: 760px;
+    }
+
+    .content p {
+      margin-top: 0;
+      margin-bottom: 1.05em;
+    }
+
+    .content ul,
+    .content ol {
+      margin-top: 0.8em;
+      margin-bottom: 1.2em;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(30px, 3.4vw, 48px);
+      box-shadow: 0 14px 42px rgba(32, 28, 23, 0.045);
+    }
+
+    .section-label {
+      position: static;
+      top: auto;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+    }
+
+    .spacer-img { margin: clamp(36px, 5vw, 70px) 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 60px);
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .disciplines {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .mini-card {
+      min-height: 100%;
+      background: rgba(255, 253, 248, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    .mini-card h3 {
+      font-size: 24px;
+      letter-spacing: -0.035em;
+    }
+
+    ul, ol {
+      margin: 16px 0 24px;
+      padding-left: 24px;
+    }
+
+    li { margin: 8px 0; }
+
+    .strong-line {
+      font-size: clamp(23px, 2.4vw, 34px);
+      line-height: 1.22;
+      letter-spacing: -0.035em;
+      color: #2b241c;
+      margin-bottom: 24px;
+    }
+
+    .cta {
+      margin: 0 auto;
+      max-width: 1060px;
+      text-align: center;
+      background: #211d18;
+      color: var(--ivory);
+      border-radius: 34px;
+      padding: clamp(42px, 7vw, 86px);
+      box-shadow: 0 30px 90px rgba(32, 28, 23, 0.18);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cta p {
+      color: rgba(251,247,239,0.82);
+      max-width: 840px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .strong-line { color: var(--ivory); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: var(--ivory);
+      color: var(--text);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    footer {
+      padding: 40px 0 70px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 920px) {
+      .hero, .section-grid, .split, .disciplines { grid-template-columns: 1fr; }
+      .hero { padding-top: 108px; min-height: auto; }
+      .hero-image img { height: auto; aspect-ratio: 4 / 5; }
+      .section-label { position: static; margin-bottom: 6px; }
+      .side-image {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 16 / 10;
+        margin: 16px 0 20px;
+        position: static;
+      }
+      .wide-img { aspect-ratio: 16 / 10; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1180px); }
+      .nav { top: 10px; width: calc(100% - 20px); padding: 11px 14px; }
+      .nav-note { display: none; }
+      .quote { padding-left: 18px; }
+      .card, .mini-card { border-radius: 22px; }
+      .cta { border-radius: 26px; }
+    }
+  
+    /* Final editorial alignment polish */
+    .wrap {
+      width: min(1180px, calc(100% - 44px));
+    }
+
+    .section-grid {
+      grid-template-columns: minmax(330px, 420px) minmax(0, 760px);
+      justify-content: space-between;
+      column-gap: clamp(40px, 5vw, 72px);
+    }
+
+    .split {
+      grid-template-columns: minmax(0, 760px) minmax(320px, 420px);
+      justify-content: space-between;
+      column-gap: clamp(40px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .single-content {
+      max-width: 760px;
+      width: 100%;
+      margin-top: 48px;
+    }
+
+    .single-content .content,
+    .split .content,
+    .section-grid .content {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .content {
+      line-height: 1.66;
+    }
+
+    .content.card,
+    .single-content .card,
+    .split .card {
+      width: 100%;
+    }
+
+    .card {
+      padding: clamp(34px, 3.6vw, 52px);
+    }
+
+    .card p:last-child,
+    .content p:last-child,
+    .mini-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content li {
+      padding-left: 0.15em;
+    }
+
+    .content ul,
+    .content ol {
+      padding-left: 1.35em;
+    }
+
+    .section-label {
+      padding-top: 8px;
+    }
+
+    .side-image {
+      width: min(100%, 420px);
+      margin-top: 30px;
+    }
+
+    .portrait-img {
+      max-width: 420px;
+      width: 100%;
+      justify-self: end;
+    }
+
+    .disciplines {
+      align-items: stretch;
+    }
+
+    .mini-card {
+      background: rgba(255, 253, 248, 0.74);
+      box-shadow: 0 10px 28px rgba(32, 28, 23, 0.035);
+    }
+
+    @media (max-width: 920px) {
+      .wrap {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .section-grid,
+      .split {
+        grid-template-columns: 1fr;
+        row-gap: 26px;
+      }
+
+      .single-content,
+      .content,
+      .single-content .content,
+      .split .content,
+      .section-grid .content {
+        max-width: 100%;
+      }
+
+      .portrait-img,
+      .side-image {
+        max-width: 100%;
+        width: 100%;
+        justify-self: stretch;
+      }
+    }
+
+    /* Refined final layer: quieter images, cleaner reading plane */
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(216, 196, 164, 0.20), transparent 34rem),
+        linear-gradient(180deg, #fbf7ef 0%, #fffdf8 46%, #f6efe3 100%);
+    }
+
+    section {
+      padding: clamp(64px, 7.2vw, 104px) 0;
+    }
+
+    .nav {
+      box-shadow: 0 10px 30px rgba(32, 28, 23, 0.055);
+    }
+
+    .hero {
+      grid-template-columns: minmax(0, 0.98fr) minmax(360px, 0.82fr);
+      gap: clamp(54px, 6vw, 86px);
+      align-items: center;
+    }
+
+    .hero-image {
+      max-width: 430px;
+      justify-self: end;
+    }
+
+    .hero-image img {
+      height: auto;
+      aspect-ratio: 4 / 5;
+      filter: saturate(0.86) contrast(0.94) brightness(1.04);
+    }
+
+    h1 {
+      max-width: 720px;
+    }
+
+    h2 {
+      max-width: 760px;
+    }
+
+    .section-grid {
+      grid-template-columns: minmax(280px, 360px) minmax(0, 760px);
+      justify-content: space-between;
+      align-items: start;
+      column-gap: clamp(52px, 6vw, 88px);
+    }
+
+    .content,
+    .single-content,
+    .section-grid .content,
+    .split .content,
+    .single-content .content {
+      max-width: 760px;
+    }
+
+    .content {
+      font-size: clamp(18px, 1.13vw, 19.5px);
+      line-height: 1.72;
+      letter-spacing: -0.005em;
+    }
+
+    .content p {
+      margin-bottom: 1.12em;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.58);
+      border: 1px solid rgba(32, 28, 23, 0.085);
+      box-shadow: 0 10px 34px rgba(32, 28, 23, 0.035);
+      padding: clamp(34px, 3.2vw, 48px);
+    }
+
+    .quote {
+      background: transparent;
+    }
+
+    .section-label {
+      color: rgba(159, 128, 80, 0.88);
+      padding-top: 10px;
+    }
+
+    .side-image,
+    .portrait-img {
+      max-width: 340px;
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 18px 48px rgba(32, 28, 23, 0.075);
+      border-color: rgba(159, 128, 80, 0.16);
+      background: transparent;
+    }
+
+    .side-image {
+      margin-top: 26px;
+      justify-self: start;
+    }
+
+    .side-image img,
+    .portrait-img img,
+    .framed-img img {
+      filter: saturate(0.78) contrast(0.92) brightness(1.08);
+    }
+
+    .side-image::after,
+    .portrait-img::after,
+    .hero-image::after {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(180deg, rgba(8,13,21,.08) 0%, rgba(8,13,21,.36) 54%, rgba(8,13,21,.9) 100%),
-        linear-gradient(90deg, rgba(8,13,21,.36), rgba(8,13,21,.04) 48%, rgba(8,13,21,.42));
+      border-radius: inherit;
+      pointer-events: none;
+      background: rgba(251, 247, 239, 0.10);
     }
 
-    .premium-visual-caption {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      z-index: 2;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(8,13,21,.64);
-      border: 1px solid rgba(201,171,109,.14);
-      backdrop-filter: blur(10px);
-      color: var(--ivory-soft);
-      font-size: .9rem;
-      line-height: 1.45;
+    .framed-img,
+    .hero-image {
+      position: relative;
     }
 
-    .premium-visual-kicker {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-size: .68rem;
+    .split {
+      grid-template-columns: minmax(0, 760px) minmax(260px, 340px);
+      justify-content: space-between;
+      align-items: start;
+      column-gap: clamp(52px, 6vw, 88px);
     }
 
-    .compact-manifesto {
-      align-items: stretch;
-    }
-
-    .architecture-premium-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .architecture-intro-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
+    .disciplines {
       gap: 20px;
-      align-items: stretch;
     }
 
-    .architecture-compact-cards {
+    .mini-card {
+      padding: 28px;
+      background: rgba(255, 253, 248, 0.60);
+      border-color: rgba(32, 28, 23, 0.085);
+    }
+
+    .single-content {
+      margin-left: 0;
+    }
+
+    .cta {
+      max-width: 900px;
+      border-radius: 30px;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .section-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image,
+      .side-image,
+      .portrait-img {
+        max-width: 100%;
+        justify-self: stretch;
+      }
+
+      .side-image,
+      .portrait-img {
+        aspect-ratio: 16 / 10;
+        margin-top: 18px;
+      }
+
+      .content {
+        font-size: 18px;
+        line-height: 1.68;
+      }
+    }
+
+    /* TWR block and 30/30/40 full-width refinement */
+    .full-width-block {
+      grid-column: 1 / -1;
+      width: 100%;
+      max-width: none;
+      margin-top: 34px;
+    }
+
+    .full-width-block .content {
+      max-width: none;
+    }
+
+    .full-width-block.card {
+      max-width: none;
+    }
+
+    .twr-section {
+      margin-top: clamp(34px, 5vw, 58px);
+      padding: clamp(30px, 5vw, 56px);
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(31, 28, 24, 0.96), rgba(20, 22, 27, 0.96));
+      color: #f4efe6;
+      box-shadow: 0 24px 70px rgba(32, 28, 23, 0.12);
+      border: 1px solid rgba(159, 128, 80, 0.18);
+    }
+
+    .twr-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .twr-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(201, 171, 109, 0.22);
+      border-radius: 999px;
+      background: rgba(244, 239, 230, 0.04);
+      color: #d8d0c4;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .twr-eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c9ab6d;
+      box-shadow: 0 0 10px rgba(201,171,109,.5);
+    }
+
+    .twr-section h1 {
+      color: #f4efe6;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+      max-width: 780px;
+      font-weight: 600;
+    }
+
+    .twr-sub {
+      color: #a8b2c4;
+      font-size: 0.98rem;
+      max-width: 70ch;
+      line-height: 1.6;
+      margin: 0 0 34px;
+    }
+
+    .twr-stats {
       display: grid;
-      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
-    .architecture-compact-card {
-      padding: 20px;
-      border-radius: 20px;
-      background: rgba(244,239,230,.04);
-      border: 1px solid rgba(244,239,230,.08);
+    .twr-stat {
+      background: rgba(247,241,231,0.05);
+      border: 1px solid rgba(201,171,109,0.15);
+      border-radius: 16px;
+      padding: 16px 18px;
     }
 
-    .architecture-compact-card .alloc {
+    .twr-stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a8b2c4;
+      margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+    }
+
+    .twr-stat-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f4efe6;
+    }
+
+    .twr-stat-value.neg {
+      color: #e07070;
+    }
+
+    .twr-panel {
+      background: rgba(247,241,231,0.04);
+      border: 1px solid rgba(201,171,109,0.15);
+      border-radius: 22px;
+      padding: 28px 32px 24px;
+    }
+
+    .twr-legend {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      color: #a8b2c4;
+      font-family: Arial, sans-serif;
+    }
+
+    .twr-legend span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .twr-legend-line {
+      width: 16px;
+      height: 2px;
+      border-radius: 2px;
       display: inline-block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 1.3rem;
-      line-height: 1;
-      letter-spacing: -0.02em;
     }
 
-    .architecture-compact-card h3 {
-      margin: 0 0 7px;
-      font-size: 1.13rem;
-      line-height: 1.2;
+    .twr-chart-wrap {
+      position: relative;
+      width: 100%;
+      height: 360px;
     }
 
-    .architecture-compact-card p {
-      margin: 0;
-      color: var(--ivory-soft);
-      font-size: .95rem;
+    .twr-note {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(201,171,109,0.12);
+      font-size: 0.78rem;
+      color: #a8b2c4;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
     }
 
-    .premium-pricing-visual {
-      margin-top: 18px;
-      min-height: 300px;
+    @media (max-width: 640px) {
+      .twr-section { padding: 26px 18px; }
+      .twr-stats { grid-template-columns: 1fr; }
+      .twr-panel { padding: 20px 16px; }
+      .twr-chart-wrap { height: 280px; }
     }
 
-    .premium-pricing-visual .premium-visual-caption {
-      font-size: .88rem;
+    /* Final alignment fix without changing TWR visual design */
+    .twr-full-row {
+      border-top: 0;
+      padding-top: 0;
+      padding-bottom: clamp(58px, 7vw, 96px);
     }
 
-
-    .architecture-compact-card p + p {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(201,171,109,.1);
+    .twr-full-row .wrap {
+      width: min(1180px, calc(100% - 44px)) !important;
+      max-width: 1180px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
-    @media (max-width: 1080px) {
-      .premium-split,
-      .architecture-premium-grid,
-      .architecture-intro-grid {
-        grid-template-columns: 1fr;
-      }
+    .twr-full-row .twr-section {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
 
-      .premium-visual,
-      .premium-pricing-visual {
-        min-height: 360px;
+    .twr-full-row .twr-wrap {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .twr-full-row .twr-section h1,
+    .twr-full-row .twr-sub {
+      max-width: 900px !important;
+    }
+
+    .twr-full-row .twr-chart-wrap,
+    .twr-full-row .twr-panel {
+      width: 100% !important;
+    }
+
+    .manifesto-full-row {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin-top: 48px;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .manifesto-full-row .content,
+    .manifesto-full-row article,
+    .manifesto-full-row .card {
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    .manifesto-full-row article.card {
+      max-width: none !important;
+      width: 100% !important;
+    }
+
+    /* If the old wrapper is still single-content, do not let it squeeze the full-row */
+    .single-content:has(.manifesto-full-row) {
+      max-width: none !important;
+      width: 100% !important;
+    }
+
+    @media (max-width: 920px) {
+      .twr-full-row .wrap {
+        width: min(100% - 28px, 1180px) !important;
       }
     }
 
-    @media (max-width: 720px) {
-      .premium-note,
-      .architecture-compact-card {
-        padding: 18px;
-      }
+.twr-full-iframe .wrap{
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+}
+.twr-full-iframe{
+  padding:60px 0;
+}
+@media (max-width:640px){
+  .twr-full-iframe iframe{ height:520px; }
+}
 
-      .premium-visual,
-      .premium-pricing-visual {
-        min-height: 300px;
-      }
-
-      .premium-visual-caption {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        padding: 12px 14px;
-      }
-    }
-
-
-    .architecture-compact-card p + p {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(201,171,109,.1);
-    }
-
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .grid-2,
-      .offer-grid,
-      .twr-box,
-      .pricing-grid,
-      .audience-grid,
-      .offer-list,
-      .difference-grid,
-      .manifesto-grid,
-      .pricing-grid,
-      .hero-trust,
-      .architecture-grid,
-      .architecture-cards {
-        grid-template-columns: 1fr;
-      }
-
-      nav { display: none; }
-      .hero-card { min-height: 540px; }
-      .image-panel { min-height: 420px; }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(calc(100% - 24px), var(--max)); }
-      .hero { padding-top: 56px; }
-      .panel, .pricing, .cta-band, .level-card { padding: 22px; }
-      .hero-card { min-height: 460px; }
-      .hero-plaque .metric-grid { grid-template-columns: 1fr; }
-      .btns { width: 100%; }
-      .btn { width: 100%; }
-      .nav-wrap { min-height: 66px; }
-    }
-  
-    /* === FINAL GITHUB SELF-CONTAINED FIX === */
-    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-    *, *::before, *::after { box-sizing: border-box; }
-    img { max-width: 100%; display: block; }
-    .hero-card img, .image-panel img, .premium-visual img {
-      width: 100%; height: 100%; object-fit: cover; max-width: none;
-    }
-    .container, .panel, .pricing, .cta-band, .level-card, .compare-card,
-    .architecture-card, .architecture-compact-card, .offer-item, .premium-note,
-    .premium-visual, .hero-card, .image-panel, .hero-copy, .section-title { min-width: 0; }
-    .btn { white-space: normal; text-align: center; }
-    @media (max-width: 1080px) {
-      .hero-grid, .grid-2, .premium-split, .architecture-premium-grid,
-      .architecture-intro-grid, .architecture-grid, .architecture-cards,
-      .architecture-compact-cards, .offer-grid, .offer-list, .difference-grid,
-      .twr-box, .audience-grid, .pricing-grid, .manifesto-grid, .hero-trust {
-        grid-template-columns: 1fr !important;
-      }
-      nav { display: none !important; }
-      .hero-card, .image-panel, .premium-visual, .premium-pricing-visual {
-        min-height: 380px !important;
-      }
-    }
-    @media (max-width: 720px) {
-      .container { width: min(calc(100% - 24px), var(--max)) !important; }
-      .nav-wrap { min-height: 66px !important; }
-      .hero { padding: 50px 0 28px !important; }
-      .section { padding: 28px 0 !important; }
-      .hero-copy h1 {
-        font-size: clamp(2.2rem, 11.5vw, 3.15rem) !important;
-        max-width: 100% !important; line-height: 1 !important;
-      }
-      .hero-copy p.lead { font-size: 1rem !important; }
-      .section-title { margin-bottom: 22px !important; }
-      .section-title h2, .cta-content h2 {
-        font-size: clamp(1.68rem, 8vw, 2.3rem) !important; line-height: 1.08 !important;
-      }
-      .panel, .pricing, .cta-band, .level-card, .compare-card,
-      .architecture-card, .architecture-compact-card, .premium-note, .offer-item {
-        padding: 20px !important; border-radius: 20px !important;
-      }
-      .hero-card, .image-panel, .premium-visual, .premium-pricing-visual {
-        min-height: 310px !important;
-      }
-      .hero-plaque {
-        left: 14px !important; right: 14px !important; bottom: 14px !important; padding: 16px !important;
-      }
-      .hero-plaque .metric-grid { grid-template-columns: 1fr !important; }
-      .btns { width: 100%; gap: 10px; }
-      .btn { width: 100%; min-height: 48px; padding: 0 16px; }
-      .micro-cta {
-        width: 100%; align-items: flex-start; justify-content: flex-start;
-        flex-direction: column; border-radius: 18px; gap: 6px;
-      }
-      .premium-visual-caption, .image-caption {
-        left: 14px !important; right: 14px !important; bottom: 14px !important;
-        padding: 12px 14px !important; max-width: calc(100% - 28px);
-      }
-      .price { font-size: clamp(3rem, 16vw, 4rem) !important; }
-      .footer-grid { grid-template-columns: 1fr !important; }
-    }
-
-  </style>
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top">
-        <span class="brand-name">Epictetus FO</span>
-        <span class="brand-sub">The Stoic Discipline of Long-Term Capital</span>
-      </a>
-      <nav>
-        <a href="#what">What It Is</a>
-        <a href="#manifesto">Manifesto</a>
-        <a href="#performance">Performance</a>
-        <a href="#difference">Why It Differs</a>
-        <a href="#pricing">Membership</a>
-      </nav>
-      <div class="btns">
-        <a class="btn btn-secondary" href="#manifesto">Read the Manifesto</a>
-        <a class="btn btn-primary" href="#pricing">Join for $99/year</a>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="brand">Epictetus FO</div>
+    <div class="nav-note">Discipline · Time · Compounding</div>
+  </nav>
+
+  <main>
+    <header class="wrap hero">
+      <div>
+        <div class="eyebrow">Family Office</div>
+        <h1>Epictetus Fund: Stoicism as a Path to Sustainable Financial Success</h1>
+<div class="quote">
+          “There are things that are up to us, and things that are not up to us. Wisdom is being able to tell the difference and focus on the first.”
+          <small>Epictetus, Stoic philosopher (c. 50–135 AD), author of the Enchiridion.</small>
+        </div>
+      </div>
+      <figure class="hero-image" aria-label="Stoic statue holding a financial maxim">
+        <img src="assets/01-marcus-aurelius.jpg" alt="Marcus Aurelius inspired statue with scroll" />
+      </figure>
+    </header>
+
+    <section>
+      <div class="wrap section-grid">
+        <aside class="section-label">Foundation
+          <figure class="framed-img side-image">
+            <img src="assets/02-risk-column.jpg" alt="Ancient column with risk management words" />
+          </figure>
+        </aside>
+        <article class="content card">
+          <p>We live in a world where markets move faster than we can read the news. Crises, rumours and randomness crash over us like waves — and it often feels like we control nothing.</p>
+          <p>But there is one thing we’ve learned for sure: we do not control the market. We do control ourselves.</p>
+          <div class="quote">
+            “Let your mind be like a rock against which the waves break: they crash and howl, but the rock stands.”
+            <small>Zeno of Citium (c. 334–255 BC), Stoic philosopher from Cyprus, teacher of Epictetus.</small>
+          </div>
+          <p>Our mission is not to predict the future. Our mission is to build the ability to make sound decisions today, so we tilt the odds in our favour tomorrow. This is not about luck. It is about discipline, clarity and honesty.</p>
+        </article>
+      </div>
+    </section>
+<section>
+      <div class="wrap section-grid">
+        <aside class="section-label">Real-time learning project
+          <figure class="framed-img side-image wide-side">
+            <img src="assets/06-temple-wide.jpg" alt="Ancient temple by the sea with discipline and self-mastery inscription" />
+          </figure>
+        </aside>
+        <article class="content">
+          <p>This site is part of a 25‑year real‑time learning project. In practice, we want to show how applied Stoicism, time and compounding can take you from poverty into the middle class, or from a mid‑sized business into a large one. This is the path we’re walking ourselves, and we’re documenting it openly so that anyone who shares this mindset can learn alongside us.</p>
+          <p>Epictetus Fund is not “philosophy on the side” and “business on the side”. It is the journal of a player‑philosopher who puts his own time and capital at risk and shows his decisions, mistakes and lessons in real life.</p>
+          <p>We publish the fund’s TWR almost in real time and we do not hide drawdowns behind pretty averages. By its very meaning, TWR is all about whether the fund manager made new money or lost old cash over the reporting period — basically, a proper gut-check on how well the fund manager did their job. Once a quarter, we write letters to partners in the spirit of Buffett — in plain English, with no corporate fog: what worked, what didn’t, and what we learned.</p>
+          
+          <p>Stoicism was not invented to “generate alpha”. But one of our goals is to show, in practice, how easily it can do exactly that when you treat it as a practical tool — in our case, inside a real financial business.</p>
+
+      </div>
+
       </div>
     </div>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Public 25-Year Portfolio Experiment</span>
-          <h1>
-            <span class="headline-accent">Epictetus FO</span>
-            The Stoic Discipline of Long-Term Capital
-          </h1>
-          <p class="lead">
-            A living capital framework for serious long-term investors. Access the five-level Manifesto, the portfolio’s governing logic, and disciplined analytical commentary – not trading signals, not noise, and not promises.
-          </p>
-          <div class="btns">
-            <a class="btn btn-primary" href="#pricing">Join for $99/year</a>
-            <a class="btn btn-secondary" href="#manifesto">Read the Manifesto</a>
-          </div>
-          <div class="hero-trust">
-            <div class="trust-item">Transparent TWR record</div>
-            <div class="trust-item">Stoicism applied to capital allocation</div>
-            <div class="trust-item">30/30/40 global portfolio architecture</div>
-            <div class="trust-item">Monthly letters, annual dossier, disciplined self-audit</div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-card">
-            <img src="images/img02.jpg" alt="Marcus Aurelius statue holding a scroll about judgment and right living" />
-            <div class="hero-plaque">
-              <div class="metric-title">Membership proposition</div>
-              <div class="metric-grid">
-                <div class="metric">
-                  <strong>$99</strong>
-                  <span>Annual subscription</span>
-                </div>
-                <div class="metric">
-                  <strong>5 Levels</strong>
-                  <span>Manifesto and operating documents</span>
-                </div>
-                <div class="metric">
-                  <strong>25 Years</strong>
-                  <span>Documented compounding horizon</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="what">
-      <div class="container grid-2">
-        <div class="panel">
-          <div class="section-title">
-            <span class="eyebrow">What Epictetus FO Is</span>
-            <h2>A family office, operating in public, under a long horizon.</h2>
-          </div>
-          <p class="muted">
-            Epictetus FO presents a rare proposition: a private family office managing its own capital in public, through a documented 25-year portfolio experiment. It is built on Stoic philosophy, behavioural finance, strict portfolio discipline, and transparent time-weighted return reporting.
-          </p>
-          <p class="muted">
-            The objective is not spectacle. The objective is to show, over full cycles, how disciplined judgment, risk architecture, and measured execution can turn capital into a compounding system.
-          </p>
-          <div class="split-points">
-            <div class="point">
-              <div class="num">I</div>
-              <div><strong>Real capital.</strong> No external money, no theatrical posturing, no generic market commentary.</div>
-            </div>
-            <div class="point">
-              <div class="num">II</div>
-              <div><strong>Operating discipline.</strong> Position sizing, instrument selection, observation frequency, and process integrity are treated as controllable variables.</div>
-            </div>
-            <div class="point">
-              <div class="num">III</div>
-              <div><strong>Documented continuity.</strong> The Manifesto, annual dossiers, monthly letters, and post-mortems create an archive of method rather than a stream of opinions.</div>
-            </div>
-          </div>
-
-          <div class="btns" style="margin-top: 24px;">
-            <a class="btn btn-secondary" href="#manifesto">Explore the Manifesto</a>
-            <a class="btn btn-primary" href="#pricing">Join for $99/year</a>
-          </div>
-        </div>
-
-        <div class="panel image-panel">
-          <img src="images/img03.jpg" alt="Ancient risk column with inscription Risk Understand Size Accept Manage" />
-          <div class="image-caption">
-            A modern capital discipline framed in the language of classical restraint.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="premium-split">
-          <div class="panel">
-            <div class="section-title">
-              <span class="eyebrow">Why Stoicism Belongs in Finance</span>
-              <h2>Not prediction. Discipline.</h2>
-            </div>
-
-            <div class="premium-copy-stack">
-              <div class="premium-note">
-                <p>
-                  Stoicism, in this context, is not self-help and not endurance for its own sake. It is a practical framework for distinguishing between what is controllable and what is not.
-                </p>
-              </div>
-
-              <div class="premium-note">
-                <p>
-                  Markets remain external. <strong>Judgment, risk limits, position sizing, and behavioural hygiene remain internal.</strong>
-                </p>
-              </div>
-
-              <div class="premium-note">
-                <p>
-                  That distinction moves the investor away from reacting to headlines and toward designing a process capable of surviving them.
-                </p>
-              </div>
-
-              <div class="split-points">
-                <div class="point"><div class="num">1</div><div><strong>Control over judgment</strong> rather than fascination with forecasts.</div></div>
-                <div class="point"><div class="num">2</div><div><strong>Control over risk</strong> rather than attachment to any single thesis.</div></div>
-                <div class="point"><div class="num">3</div><div><strong>Control over behaviour</strong> when volatility tests conviction.</div></div>
-                <div class="point"><div class="num">4</div><div><strong>Freedom from noise</strong> through predefined plans, diversified architecture, and consistent execution.</div></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="premium-visual">
-            <img src="images/img04.jpg" alt="Epictetus statue with temple and inscription about discipline, time, and compounding" />
-            <div class="premium-visual-caption">
-              <span class="premium-visual-kicker">Stoic capital</span>
-              Discipline, time, and compounding — the first language of long-term capital.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="manifesto">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow">The Five-Level Manifesto</span>
-          <h2>A readable architecture of philosophy, process, execution, review, and self-correction.</h2>
-          <p>
-            The Manifesto is the spine of the project. Levels I and II introduce the public philosophy and decision architecture. Levels III, IV, and V form the paid operating archive – the deeper portfolio logic, execution framework, annual and monthly commentary, and disciplined self-audit.
-          </p>
-        </div>
-
-        <div class="manifesto-grid">
-          <article class="level-card public">
-            <span class="level-tag">Public</span>
-            <h3>Level I – Philosophy of the Fund</h3>
-            <p>
-              The ethical and intellectual foundation of Epictetus FO: Stoic control, behavioural safeguards, the preservation of judgment, and the conviction that process matters more than short-term outcomes.
-            </p>
-          </article>
-
-          <article class="level-card public">
-            <span class="level-tag">Public</span>
-            <h3>Level II – Decision Architecture</h3>
-            <p>
-              The long-horizon design of the fund: the 30/30/40 world model, the role of the Centaur, the division between Stoic Core and Tudor, the drawdown philosophy, and the discipline that governs when action is allowed.
-            </p>
-          </article>
-
-          <article class="level-card paid">
-            <span class="level-tag">Subscriber Access</span>
-            <h3>Level III – Global 30/30/40 Model</h3>
-            <p>
-              The operational execution model behind the portfolio: sleeves, instruments, permitted structures, risk boundaries, role design, rebalancing logic, compliance triggers, and the standing rulebook across market regimes.
-            </p>
-          </article>
-
-          <article class="level-card paid">
-            <span class="level-tag">Subscriber Access</span>
-            <h3>Level IV – Annual Dossier &amp; Monthly Newspaper</h3>
-            <p>
-              The annual review and ongoing letter stream. Subscribers follow what changed, why it changed, what was mistaken, what was learned, and how current positioning is being interpreted through the governing framework.
-            </p>
-          </article>
-
-          <article class="level-card paid" style="grid-column: 1 / -1; min-height: 220px;">
-            <span class="level-tag">Subscriber Access</span>
-            <h3>Level V – Steward’s Post-Mortem</h3>
-            <p>
-              Radical honesty as an institutional habit. A structured record of mistakes, behavioural failures, thesis errors, and process corrections – not to dramatise loss, but to convert error into durable operating knowledge.
-            </p>
-          </article>
-        </div>
-
-          <div class="btns" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="#architecture">Study the 30/30/40 Architecture</a>
-            <a class="btn btn-primary" href="#pricing">Unlock the Execution Logic</a>
-          </div>
-      </div>
-    </section>
-
-
-        <section class="section" id="architecture">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow">The 30/30/40 Architecture</span>
-          <h2>The architecture of capital, not allocation.</h2>
-          <p>
-            The 30/30/40 model is the portfolio’s structural grammar. It governs behaviour across expansion, contraction, uncertainty, and regime change – so that discipline, rather than mood, determines the path of capital.
-          </p>
-        </div>
-
-        <div class="architecture-premium-grid">
-          <div class="premium-visual">
-            <img src="images/img05.jpg" alt="Ancient risk column with inscription Risk Understand Size Accept Manage" />
-            <div class="premium-visual-caption">
-              <span class="premium-visual-kicker">Risk discipline</span>
-              Risk is not avoided. It is understood, sized, accepted, and managed.
-            </div>
-          </div>
-
-          <div class="architecture-compact-cards">
-            <article class="architecture-compact-card">
-              <span class="alloc">30%</span>
-              <h3>The Index</h3>
-              <p>
-                Permanent broad-market exposure. This sleeve captures the structural progress of the global economy without requiring constant macro prediction.
-              </p>
-              <p>
-                Durable results do not come from constant prediction, but from a repeatable structure that knows what each part of capital is meant to do.
-              </p>
-            </article>
-
-            <article class="architecture-compact-card">
-              <span class="alloc">30%</span>
-              <h3>Growth Leaders</h3>
-              <p>
-                Category leaders with reinvestment capacity and long-duration compounding potential. Volatility is accepted; indiscipline is not.
-              </p>
-              <p>
-                The model does not ask the portfolio to be clever in every season. It asks it to remain coherent across many seasons.
-              </p>
-            </article>
-
-            <article class="architecture-compact-card">
-              <span class="alloc">40%</span>
-              <h3>Dividend Growth &amp; Stability</h3>
-              <p>
-                Dividend growers, income assets, bonds, and liquidity reserves. This layer supplies cash flow, dampens volatility, and funds rebalancing.
-              </p>
-              <p>
-                30/30/40 reduces emotional allocation shifts, concentration drift, and reactive decision-making. In their place it establishes participation, controlled asymmetry, and structural endurance.
-              </p>
-            </article>
-          </div>
-        </div>
-
-        <div class="panel architecture-foot">
-          <div class="section-title" style="margin-bottom: 16px; max-width: 960px;">
-            <span class="eyebrow">How the System Works Together</span>
-            <h2 style="font-size: clamp(1.55rem, 2.3vw, 2.15rem);">Participation. Acceleration. Resilience.</h2>
-          </div>
-          <p class="muted">
-            The Index keeps the portfolio in contact with the world. Growth Leaders provide selective acceleration. The Dividend Growth &amp; Stability sleeve preserves continuity, liquidity, and emotional steadiness. Together they create a framework in which no single bet defines the whole, capital compounds through cycles rather than timing, and deviation from the structure is treated not as creativity, but as a process error.
-          </p>
-          <div class="divider"></div>
-          <a class="micro-cta" href="#pricing">
-            Explore the Execution Logic Behind 30/30/40
-            <strong>→ Available in Level III – Global 30/30/40 Model</strong>
-          </a>
-        </div>
-      </div>
-    </section>
-
-<section class="section">
-      <div class="container offer-grid">
-        <div class="panel">
-          <div class="section-title">
-            <span class="eyebrow">What Subscribers Actually Get</span>
-            <h2>The paid archive behind the public philosophy.</h2>
-          </div>
-          <p class="muted">
-            The subscription is designed for readers who want more than broad ideas. It opens the working record: how the portfolio is structured, how judgments are expressed in allocation, how changes are justified, and how discipline is preserved when markets become emotional.
-          </p>
-          <div class="offer-list">
-            <div class="offer-item"><strong>Paid Manifesto Levels</strong>Access to Levels III–V, including the execution framework and the self-audit layer.</div>
-            <div class="offer-item"><strong>Deeper Fund Analytics</strong>Portfolio logic, instrument choice, risk boundaries, and decision commentary.</div>
-            <div class="offer-item"><strong>Annual Dossier</strong>A structured yearly review of targets, constraints, execution, and findings.</div>
-            <div class="offer-item"><strong>Monthly Newspaper</strong>Letters explaining decisions, changes, mistakes, and current thinking.</div>
-            <div class="offer-item"><strong>Daily Trade Wire Notes</strong>Short-form transparency on significant actions, sizing, and rationale.</div>
-            <div class="offer-item"><strong>Educational Value</strong>A disciplined long-term learning environment for investors who prefer method to noise.</div>
-          </div>
-        </div>
-
-        <div class="panel image-panel">
-          <img src="images/img06.jpg" alt="Stone statue among ruins" />
-          <div class="image-caption">
-            Membership grants access to the architecture beneath the surface narrative.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="difference">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow">Why This Is Different</span>
-          <h2>Neither signal service nor philosophical theatre.</h2>
-        </div>
-        <div class="difference-grid">
-          <div class="compare-card">
-            <h3>What this is not</h3>
-            <ul class="simple-list">
-              <li>Not a trading newsletter built on urgency and reaction.</li>
-              <li>Not a signal group selling proximity to action.</li>
-              <li>Not a hype-driven investment community chasing narrative heat.</li>
-              <li>Not “mindset content” detached from real portfolio consequences.</li>
-              <li>Not generic market commentary dressed as conviction.</li>
-            </ul>
-          </div>
-          <div class="compare-card">
-            <h3>What this is</h3>
-            <ul class="simple-list">
-              <li>A disciplined operating system for long-term capital.</li>
-              <li>A documented compounding project, observed over time.</li>
-              <li>A rare fusion of Stoicism, behavioural finance, and portfolio logic.</li>
-              <li>An educational window into how a serious allocator actually thinks.</li>
-              <li>A restrained, credible membership for readers who value process.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="btns" style="margin-top: 24px;">
-          <a class="btn btn-secondary" href="#manifesto">Read the Public Levels</a>
-          <a class="btn btn-primary" href="#pricing">Access Subscriber Levels</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container twr-box">
-        <div class="panel">
-          <div class="section-title">
-            <span class="eyebrow">TWR / Return Philosophy</span>
-            <h2>A record, not a promise.</h2>
-          </div>
-
-          <div class="premium-copy-stack">
-            <div class="premium-note">
-              <p>
-                The project is framed around a long-run ambition in the general order of capital doubling over roughly seven-year stretches.
-              </p>
-            </div>
-
-            <div class="premium-note">
-              <p>
-                That aspiration is directional rather than promotional. It is not a guarantee, not advice, and not a claim of inevitability.
-              </p>
-            </div>
-
-            <div class="premium-note">
-              <p>
-                Time-weighted return helps isolate decision quality from external capital inflows and outflows.
-              </p>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-          <p class="reassure">
-            Returns are disclosed as evidence of process under real conditions – including negative periods, mistakes, and revisions.
-          </p>
-
-          <div class="btns" style="margin-top: 22px;">
-            <a class="btn btn-secondary" href="#difference">See Why It Differs</a>
-            <a class="btn btn-primary" href="#pricing">Join the Record</a>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="quote-block">
-            <strong>Transparent TWR</strong> is the discipline of measurement. It does not flatter timing, obscure errors, or confuse added cash with earned performance. It is a cleaner language for a long experiment conducted in public.
-          </div>
-          <div class="split-points" style="margin-top: 26px;">
-            <div class="point"><div class="num">A</div><div>Decision quality is judged through a consistent return record.</div></div>
-            <div class="point"><div class="num">B</div><div>External flows do not distort the reading of the portfolio’s work.</div></div>
-            <div class="point"><div class="num">C</div><div>Trust is strengthened when bad periods are documented with the same calm as good ones.</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="performance">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow">Live Performance Record</span>
-          <h2>Time-Weighted Return — 2026 YTD</h2>
-          <p class="muted" style="max-width:72ch;margin:0;">Daily TWR sourced directly from Interactive Brokers PortfolioAnalyst. Long book, short book, and total portfolio — every session documented without revision.</p>
-        </div>
-
-        <div class="panel" style="padding: 32px 36px;">
-          <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:28px;">
-            <div style="background:rgba(247,241,231,0.04);border:1px solid rgba(201,171,109,0.15);border-radius:16px;padding:16px 18px;">
-              <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:6px;">Account</div>
-              <div style="font-size:1rem;font-weight:600;color:var(--ivory);">U16791974</div>
-            </div>
-            <div style="background:rgba(247,241,231,0.04);border:1px solid rgba(201,171,109,0.15);border-radius:16px;padding:16px 18px;">
-              <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:6px;">Period</div>
-              <div style="font-size:1rem;font-weight:600;color:var(--ivory);">5 Jan – 24 Apr 2026</div>
-            </div>
-            <div style="background:rgba(247,241,231,0.04);border:1px solid rgba(201,171,109,0.15);border-radius:16px;padding:16px 18px;">
-              <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:6px;">Drawdown Low</div>
-              <div style="font-size:1rem;font-weight:600;color:#e07070;">−16.58%</div>
-            </div>
-            <div style="background:rgba(247,241,231,0.04);border:1px solid rgba(201,171,109,0.15);border-radius:16px;padding:16px 18px;">
-              <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:6px;">TWR Total</div>
-              <div style="font-size:1rem;font-weight:600;color:#e07070;">−4.60%</div>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:20px;margin-bottom:14px;font-size:0.8rem;color:var(--muted);">
-            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:2px;background:#c9ab6d;display:inline-block;border-radius:2px;"></span>Long</span>
-            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:2px;background:#d85a30;display:inline-block;border-radius:2px;"></span>Short</span>
-            <span style="display:flex;align-items:center;gap:6px;"><span style="width:14px;height:2px;background:#f4efe6;display:inline-block;border-radius:2px;"></span>Total</span>
-          </div>
-
-          <div style="position:relative;width:100%;height:340px;">
-            <canvas id="twrSiteChart" role="img" aria-label="Daily TWR Jan–Apr 2026. Final value: -4.60%">Daily TWR from 5 Jan to 24 Apr 2026, ending at -4.60%.</canvas>
-          </div>
-
-          <p style="margin:18px 0 0;font-size:0.8rem;color:var(--muted);border-top:1px solid rgba(201,171,109,0.12);padding-top:14px;">
-            Data exported directly from IB PortfolioAnalyst · Daily granularity · TWR isolates decision quality from external cash flows · Updated periodically
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-    <script>
-    (function() {
-      var raw = [
-        ["Jan 05",0.052,-0.077,0.203],["Jan 06",-0.448,0.476,0.028],["Jan 07",-1.137,0.658,-0.484],
-        ["Jan 08",-1.661,0.447,-1.220],["Jan 09",-1.619,0.745,-0.885],["Jan 12",-1.531,0.750,-0.791],
-        ["Jan 13",-1.261,0.811,-0.458],["Jan 14",-0.154,0.799,0.645],["Jan 15",-0.997,0.926,-0.078],
-        ["Jan 16",-0.851,0.920,0.064],["Jan 19",-0.851,0.920,0.064],["Jan 20",-2.877,0.883,-2.018],
-        ["Jan 21",-2.667,1.025,-1.667],["Jan 22",-2.920,1.168,-1.784],["Jan 23",-2.897,1.181,-1.749],
-        ["Jan 26",-3.498,1.196,-2.343],["Jan 27",-2.919,1.124,-1.826],["Jan 28",-2.984,1.180,-1.837],
-        ["Jan 29",-4.686,1.122,-3.615],["Jan 30",-4.746,1.162,-3.638],["Feb 02",-6.649,0.543,-6.153],
-        ["Feb 03",-7.188,0.353,-6.871],["Feb 04",-8.206,-0.302,-8.501],["Feb 05",-11.458,-5.576,-16.583],
-        ["Feb 06",-9.198,-1.204,-10.592],["Feb 09",-8.925,-0.593,-9.769],["Feb 10",-9.603,-1.232,-11.021],
-        ["Feb 11",-11.457,-0.006,-11.742],["Feb 12",-14.114,1.192,-13.333],["Feb 13",-12.228,1.952,-10.779],
-        ["Feb 16",-12.228,1.952,-10.779],["Feb 17",-12.780,1.952,-11.340],["Feb 18",-13.604,1.952,-12.178],
-        ["Feb 19",-13.085,1.952,-11.650],["Feb 20",-12.742,1.952,-11.301],["Feb 23",-14.552,1.952,-13.141],
-        ["Feb 24",-14.568,1.952,-13.158],["Feb 25",-11.938,1.952,-10.484],["Feb 26",-12.879,1.944,-11.447],
-        ["Feb 27",-13.917,1.923,-12.520],["Mar 02",-11.956,1.983,-10.476],["Mar 03",-12.434,1.969,-10.975],
-        ["Mar 04",-9.765,1.845,-8.370],["Mar 05",-10.785,1.955,-9.306],["Mar 06",-12.523,2.037,-11.001],
-        ["Mar 09",-11.998,2.070,-10.437],["Mar 10",-11.431,2.142,-9.798],["Mar 11",-11.079,2.158,-9.424],
-        ["Mar 12",-11.192,2.172,-9.527],["Mar 13",-10.781,2.359,-8.943],["Mar 16",-9.250,2.253,-7.474],
-        ["Mar 17",-8.926,2.259,-7.139],["Mar 18",-10.873,2.472,-8.930],["Mar 19",-11.295,2.481,-9.354],
-        ["Mar 20",-11.341,2.538,-9.350],["Mar 23",-11.060,2.612,-8.998],["Mar 24",-11.801,2.699,-9.678],
-        ["Mar 25",-10.938,2.623,-8.862],["Mar 26",-12.240,2.793,-10.043],["Mar 27",-13.607,2.766,-11.468],
-        ["Mar 30",-13.327,2.941,-11.030],["Mar 31",-12.611,3.031,-10.218],["Apr 01",-12.396,3.050,-9.980],
-        ["Apr 02",-13.037,3.050,-10.640],["Apr 03",-13.037,3.050,-10.640],["Apr 06",-11.532,3.046,-9.096],
-        ["Apr 07",-11.934,3.057,-9.498],["Apr 08",-10.660,3.035,-8.209],["Apr 09",-10.185,3.024,-7.731],
-        ["Apr 10",-9.556,3.007,-7.099],["Apr 13",-9.517,3.007,-7.059],["Apr 14",-8.993,2.944,-6.579],
-        ["Apr 15",-8.576,2.876,-6.212],["Apr 16",-8.408,2.906,-6.013],["Apr 17",-7.238,2.746,-4.959],
-        ["Apr 20",-7.894,2.955,-5.438],["Apr 21",-8.604,3.041,-6.087],["Apr 22",-6.444,2.799,-4.088],
-        ["Apr 23",-7.116,2.942,-4.643],["Apr 24",-7.142,3.012,-4.605]
-      ];
-      var labels = raw.map(function(r){return r[0];});
-      var longD = raw.map(function(r){return r[1];});
-      var shortD = raw.map(function(r){return r[2];});
-      var totalD = raw.map(function(r){return r[3];});
-
-      new Chart(document.getElementById('twrSiteChart'), {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [
-            {
-              label: 'Long',
-              data: longD,
-              borderColor: '#c9ab6d',
-              borderWidth: 1.5,
-              pointRadius: 0,
-              pointHoverRadius: 4,
-              fill: false,
-              tension: 0.25,
-              spanGaps: true
-            },
-            {
-              label: 'Short',
-              data: shortD,
-              borderColor: '#d85a30',
-              borderWidth: 1.5,
-              pointRadius: 0,
-              pointHoverRadius: 4,
-              fill: false,
-              tension: 0.25,
-              spanGaps: true
-            },
-            {
-              label: 'Total',
-              data: totalD,
-              borderColor: '#f4efe6',
-              borderWidth: 2.5,
-              pointRadius: 0,
-              pointHoverRadius: 5,
-              fill: {target:'origin', above:'rgba(244,239,230,0.04)', below:'rgba(200,80,80,0.08)'},
-              tension: 0.25
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: {mode:'index', intersect:false},
-          plugins: {
-            legend: {display: false},
-            tooltip: {
-              backgroundColor: 'rgba(8,13,21,0.92)',
-              borderColor: 'rgba(201,171,109,0.2)',
-              borderWidth: 1,
-              titleColor: '#d8d0c4',
-              bodyColor: '#a8b2c4',
-              callbacks: {
-                label: function(ctx) { return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + '%'; }
-              }
-            }
-          },
-          scales: {
-            x: {
-              grid: {color: 'rgba(255,255,255,0.05)'},
-              ticks: {color: '#a8b2c4', font:{size:10}, autoSkip:true, maxTicksLimit:12, maxRotation:45}
-            },
-            y: {
-              grid: {color: 'rgba(255,255,255,0.05)'},
-              ticks: {
-                color: '#a8b2c4',
-                font: {size:11},
-                callback: function(v){ return v.toFixed(1) + '%'; }
-              }
-            }
-          }
-        }
-      });
-    })();
-    </script>
-
-    <section class="section" id="audience-section">
-      <div class="container audience-grid">
-        <div class="panel">
-          <div class="section-title">
-            <span class="eyebrow">For Whom This Is</span>
-            <h2>Readers with horizon, patience, and respect for process.</h2>
-          </div>
-          <ul class="simple-list">
-            <li>Long-term thinkers who prefer architecture to excitement.</li>
-            <li>Serious investors who want to study a real portfolio over time.</li>
-            <li>Readers who care about discipline as much as spreadsheets.</li>
-            <li>Allocators who value error analysis, not just outcome display.</li>
-            <li>People drawn to intellectually serious, emotionally restrained financial writing.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <div class="section-title">
-            <span class="eyebrow">This Is Not For You If…</span>
-            <h2>You are seeking speed, certainty, or spectacle.</h2>
-          </div>
-          <ul class="simple-list">
-            <li>You want hot tips, day-trading alerts, or tactical adrenaline.</li>
-            <li>You expect easy promises or linear outcomes.</li>
-            <li>You do not tolerate drawdowns, revisions, or process honesty.</li>
-            <li>You want a crowd, rather than a framework.</li>
-            <li>You want to be entertained more than instructed.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="container pricing">
-        <div class="pricing-grid">
-          <div>
-            <span class="eyebrow">Annual Membership</span>
-            <div class="price">$99<small>/ year</small></div>
-            <p class="muted">
-              A premium subscription to the deeper layers of the Manifesto and the fund’s analytical record.
-            </p>
-            <div class="btns" style="margin-top: 22px;">
-              <a class="btn btn-primary" href="#final-cta">Join Epictetus FO</a>
-              <a class="btn btn-secondary" href="#manifesto">Explore the Levels</a>
-            </div>
-            <div class="reassure">
-              Educational only. No external capital. No investment advice. Just a clear window into disciplined long-term capital allocation.
-            </div>
-          </div>
-          <div>
-            <div class="compare-card" style="background: rgba(8,13,21,.24); border-color: rgba(201,171,109,.15);">
-              <h3>Included in membership</h3>
-              <ul class="simple-list">
-                <li>Access to Levels III, IV, and V of the Manifesto</li>
-                <li>Full portfolio execution logic and standing operating rules</li>
-                <li>Annual dossier and monthly newspaper-style letters</li>
-                <li>Weekly, Monthly and Quarterly Trade Wire transparency notes</li>
-                <li>Decision commentary, process documentation, and error review</li>
-                <li>A rare long-horizon archive of disciplined compounding in public</li>
-              </ul>
-
-              <div class="premium-visual premium-pricing-visual">
-                <img src="images/img07.jpg" alt="Marcus Aurelius statue holding a scroll about judgment and right living" />
-                <div class="premium-visual-caption">
-                  <span class="premium-visual-kicker">Long discipline</span>
-                  Wealth, in this system, is the by-product of judgment, execution, and endurance.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <section class="cta-band" id="final-cta">
-        <div class="cta-content">
-          <span class="eyebrow">Final Invitation</span>
-          <h2>Enter the discipline. Observe the record. Study the architecture.</h2>
-          <p class="muted" style="max-width: 60ch;">
-            Epictetus FO is not asking for belief. It is offering a long-term seat beside a real capital process – documented with restraint, measured in public, and governed by a philosophy that values judgment above noise.
-          </p>
-          <div class="btns" style="margin-top: 24px;">
-            <a class="btn btn-primary" href="#pricing">Join for $99/year</a>
-            <a class="btn btn-secondary" href="#what">Review the Framework</a>
-          </div>
-        </div>
-      </section>
+      <p class="twr-note">
+        
+      </p>
     </div>
+  </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Three Stoic Disciplines: Desire, Action, Assent</h2>
+        <div class="content">
+          <p>Stoic philosophy rests on three core disciplines. We applied them to a financial business — and they work. Here’s what that looks like from day one.</p>
+        </div>
+
+        <div class="disciplines">
+          <article class="mini-card">
+            <h3>1. The Discipline of Desire: what we want</h3>
+            <p>We want to build a serious financial business over 25 years — a fund with consistent income generation, clean intentions and transparency to the outside world. In our specific case, that also means moving beyond “mid‑sized” into “large”.</p>
+          </article>
+          <article class="mini-card">
+            <h3>2. The Discipline of Action: what we do</h3>
+            <p>To turn that desire into reality, over seven years we built our own way of running a financial business. We call it the Manifesto — a five‑layer operating system.</p>
+          </article>
+          <article class="mini-card">
+            <h3>3. The Discipline of Assent: how we improve ourselves and our decisions</h3>
+            <p>The discipline of assent is about training ourselves as portfolio managers and capital owners. How do you come out of 25 years with a win? How do you handle anger, anxiety and greed?</p>
+          </article>
+        </div>
+
+        <div class="split">
+          <article class="content card">
+            <p>We do not want:</p>
+            <ul>
+              <li>instant fame</li>
+              <li>“guaranteed” high returns</li>
+              <li>winning at any cost</li>
+            </ul>
+            <p>We do want:</p>
+            <ul>
+              <li>long‑term resilience</li>
+              <li>honesty with clients and with ourselves</li>
+              <li>a legacy that outlives us</li>
+            </ul>
+            <p>To desire, in the Stoic sense, is to choose what is within our control and to let go of what is not. Simple to say. Hard to live.</p>
+          </article>
+          <figure class="framed-img portrait-img">
+            <img src="assets/03-epictetus-temple.jpg" alt="Epictetus statue with temple and compounding inscription" />
+          </figure>
+        </div>
+
+        <div class="single-content">
+          <div class="manifesto-full-row">
+            <article class="content card">
+            <p>To turn that desire into reality, over seven years we built our own way of running a financial business. We call it the Manifesto — a five‑layer operating system:</p>
+            <ol>
+              <li>Philosophy of choice (Epictetus), mission, scientific mindset, Fund Code</li>
+              <li>A 25‑year master plan</li>
+              <li>Execution Manual</li>
+              <li>Annual dossiers and annual execution</li>
+              <li>Post‑mortem analysis and the steward‑level of owners</li>
+            </ol>
+            <p>We launched a 25‑year project called “Epictetus Fund” — fully public, with honest TWR reporting and letters written in Buffett’s style. We show, in the open, how Stoicism is applied inside a real financial business.</p>
+            <p>No hype. No dirt. No fluff.</p>
+            <p>We just execute the Manifesto. Step by step. Day by day. Year by year.</p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+<section>
+      <div class="wrap section-grid">
+        <aside class="section-label">Assent
+          <figure class="framed-img side-image">
+            <img src="assets/04-control-column.jpg" alt="Ancient column with focus on what you can control inscription" />
+          </figure>
+        </aside>
+        <article class="content card">
+          <p>Here Stoicism meets its modern heirs in the work of Kahneman and Tversky. They translated old Stoic truths into the language of behavioural economics:</p>
+          <ul>
+            <li>Loss aversion → Stoic acceptance of loss as part of how the world works</li>
+            <li>Overconfidence → Stoic indifference to the crowd’s opinion</li>
+            <li>Herd behaviour → Stoic independence from the majority view</li>
+            <li>Illusion of control → Stoic separation of what is up to us from what is not</li>
+          </ul>
+          <p>We don’t “fight” these instincts head‑on. We learn to see their nature — and refuse to let them drive the bus.</p>
+          <p>This is how the three Stoic disciplines — desire, action and assent — become the operating system of the Fund. Desire sets the frame: what we are aiming at and what we will not accept. Action is written into the Manifesto and our daily routines. Assent is tested by reality — through our honest TWR, visible drawdowns and quarterly Buffett‑style letters where we publicly dissect our decisions as part of the Epictetus Fund 25‑year experiment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap section-grid">
+        <aside class="section-label">Analysis
+          <figure class="framed-img side-image">
+            <img src="assets/07-build-wealth-column.jpg" alt="Build wealth patiently through time discipline and self-mastery" />
+          </figure>
+        </aside>
+        <article class="content">
+          <h2>Our View on Analysis: Technical and Fundamental</h2>
+          <p>You will rarely see us talk about technical or fundamental analysis on this site or in our letters. That work lives in the lower levels of the Manifesto:</p>
+          <ul>
+            <li>Level 4 — annual dossiers and annual execution</li>
+            <li>Level 5 — post‑mortems and the steward‑level of owners</li>
+          </ul>
+          <p>This is internal work, not a public debate. We do not ignore it. On the contrary: we treat it as technical, and we are happy to let AI handle the data crunching, pattern‑spotting and risk calculations faster and more accurately than a human.</p>
+          <p>Our job is not to compete with AI, but to see where humans are irreplaceable: making the actual calls, owning the responsibility, maintaining our 30/30/40 structure (“World All‑Stars”) and staying anchored in Stoic philosophy, deliberate choice and process.</p>
+        </article>
+      </div>
+
+      <div class="wrap full-width-block">
+        <article class="content card">
+          <p>We believe in a 30/30/40 build:</p>
+          <ul>
+            <li>30% — a systematic market engine (beta core): passive participation in the Train of Progress</li>
+            <li>30% — a concentrated growth sleeve (alpha pool): focus on high‑potential growth</li>
+            <li>40% — organic dividend growth (defensive anchor): a stabilising stream of free cash flow from dividends</li>
+          </ul>
+          <p>Our focus is Stoic philosophy, choice and process. Not forecasts. Action. The results of that work are visible in our honest TWR, which we publish almost in real time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap section-grid">
+        <aside class="section-label">Path
+          <figure class="framed-img side-image">
+            <img src="assets/05-true-wealth.jpg" alt="Stoic statue with true wealth inscription" />
+          </figure>
+        </aside>
+        <article class="content card">
+          <p class="strong-line">We know our final station. The names of the intermediate stops are of secondary importance.</p>
+          <p>We do not know the exact pace at which we will generate free cash flow in any given year.</p>
+          <p>We do not make promises.</p>
+          <p>But we see our target as modest: roughly doubling capital every seven years. That is enough so that, 25 years from now, the Fund can generate a steady profit stream that outperforms most financial and operating businesses in the world working with the same initial capital.</p>
+          <p>Because time and compounding are on our side.</p>
+          <p>Epictetus Fund is not just a business. It is a path.</p>
+          <p>And we walk it together: family, team, relatives, partners — and, of course, AI.</p>
+          <p>Ahead lies big business. Today is live‑fire testing of the disciplines.</p>
+          <p>Everyone participates on equal terms. Everyone learns. Everyone grows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap cta">
+        <p>P.S. The first two levels of the Manifesto are public: our quarterly letters and our honest TWR are open to anyone following the Epictetus Fund experiment. Levels three, four and five are available by subscription: there we open up the full operating system of the Fund, the tickers of the “World All‑Stars” portfolio, and near real‑time alerts on every rebalance, every buy and sell in the underlying assets and the derivatives on them — plus the steward‑level: post‑mortems, error reviews and rapid course‑corrections when needed.</p>
+        <p class="strong-line">This is no longer the shop window. It is the workshop — where you see the engine, not just the speedometer.</p>
+        <p>Annual access to the Epictetus Fund workshop is 99 dollars a year. One clear price. No hidden fees. No fine print.</p>
+        <a class="button" href="#">Join the Workshop</a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <div class="small-caps">Epictetus FO</div>
-        <div>The Stoic Discipline of Long-Term Capital</div>
-      </div>
-      <div>
-        Educational content only. No investment advice. No management of external capital.
-      </div>
-    </div>
+    <div class="wrap">Epictetus FO</div>
   </footer>
+
 </body>
 </html>
