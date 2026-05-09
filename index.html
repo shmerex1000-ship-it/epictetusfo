@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Epictetus FO – a family office landing page built on Stoic discipline, long-term capital and transparent execution." />
+  <title>Epictetus FO</title>
+  <style>
+    :root {
+      --ivory: #fbf7ef;
+      --ivory-2: #f5eddf;
+      --beige: #e9ddc9;
+      --sand: #d8c4a4;
+      --text: #201c17;
+      --muted: #706657;
+      --gold: #9f8050;
+      --gold-soft: rgba(159, 128, 80, 0.22);
+      --line: rgba(32, 28, 23, 0.12);
+      --card: rgba(255, 253, 248, 0.82);
+      --shadow: 0 22px 70px rgba(32, 28, 23, 0.10);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(216, 196, 164, 0.32), transparent 34rem),
+        linear-gradient(180deg, var(--ivory) 0%, #fffdf8 44%, var(--ivory-2) 100%);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 20;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1120px, calc(100% - 32px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 18px;
+      border: 1px solid rgba(32, 28, 23, 0.10);
+      border-radius: 999px;
+      background: rgba(251, 247, 239, 0.78);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 40px rgba(32, 28, 23, 0.08);
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .nav-note {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: clamp(34px, 5vw, 76px);
+      align-items: center;
+      padding: 120px 0 82px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      margin-bottom: 26px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1.04;
+    }
+
+    h1 {
+      font-size: clamp(43px, 6.4vw, 86px);
+      max-width: 850px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4.6vw, 62px);
+      margin-bottom: 26px;
+    }
+
+    h3 {
+      font-size: clamp(24px, 2.7vw, 34px);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(20px, 2vw, 25px);
+      max-width: 760px;
+    }
+
+    p { margin: 0 0 18px; }
+
+    .quote {
+      margin: 32px 0 0;
+      padding: 22px 0 22px 24px;
+      border-left: 2px solid var(--gold);
+      font-size: clamp(20px, 2vw, 25px);
+      line-height: 1.42;
+      color: #2a241d;
+      max-width: 760px;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .hero-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--gold-soft);
+      background: var(--ivory);
+      box-shadow: var(--shadow);
+    }
+    .framed-img {
+      border-radius: var(--radius);
+      overflow: visible;
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+
+    .framed-img img {
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: min(860px, 84vh);
+      object-fit: cover;
+    }
+
+    .framed-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .wide-img { aspect-ratio: 16 / 7; }
+    .portrait-img { aspect-ratio: 16 / 9; border: none !important; background: none !important; box-shadow: none !important; }
+
+    .side-image {
+      margin-top: 0;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 20px;
+      position: static;
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .side-image.wide-side {
+      aspect-ratio: 3 / 4;
+    }
+
+    .side-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+    }
+
+    .single-content {
+      max-width: 860px;
+    }
+
+    section {
+      padding: clamp(58px, 8vw, 112px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .content {
+      font-size: clamp(18px, 1.22vw, 20px);
+      max-width: 760px;
+    }
+
+    .content p {
+      margin-top: 0;
+      margin-bottom: 1.05em;
+    }
+
+    .content ul,
+    .content ol {
+      margin-top: 0.8em;
+      margin-bottom: 1.2em;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(30px, 3.4vw, 48px);
+      box-shadow: 0 14px 42px rgba(32, 28, 23, 0.045);
+    }
+
+    .section-label {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+    }
+
+    .spacer-img { margin: clamp(36px, 5vw, 70px) 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 60px);
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .disciplines {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .mini-card {
+      min-height: 100%;
+      background: rgba(255, 253, 248, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    .mini-card h3 {
+      font-size: 24px;
+      letter-spacing: -0.035em;
+    }
+
+    ul, ol {
+      margin: 16px 0 24px;
+      padding-left: 24px;
+    }
+
+    li { margin: 8px 0; }
+
+    .strong-line {
+      font-size: clamp(23px, 2.4vw, 34px);
+      line-height: 1.22;
+      letter-spacing: -0.035em;
+      color: #2b241c;
+      margin-bottom: 24px;
+    }
+
+    .cta {
+      margin: 0 auto;
+      max-width: 1060px;
+      text-align: center;
+      background: #211d18;
+      color: var(--ivory);
+      border-radius: 34px;
+      padding: clamp(42px, 7vw, 86px);
+      box-shadow: 0 30px 90px rgba(32, 28, 23, 0.18);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cta p {
+      color: rgba(251,247,239,0.82);
+      max-width: 840px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .strong-line { color: var(--ivory); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: var(--ivory);
+      color: var(--text);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    footer {
+      padding: 40px 0 70px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 920px) {
+      .hero, .section-grid, .split, .disciplines { grid-template-columns: 1fr; }
+      .hero { padding-top: 108px; min-height: auto; }
+      .hero-image img { height: auto; aspect-ratio: 4 / 5; }
+      .section-label { position: static; margin-bottom: 6px; top: auto; }
+      .side-image {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 16 / 10;
+        margin: 16px 0 20px;
+        position: static;
+        top: auto;
+      }
+      .wide-img { aspect-ratio: 16 / 10; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1180px); }
+      .nav { top: 10px; width: calc(100% - 20px); padding: 11px 14px; }
+      .nav-note { display: none; }
+      .quote { padding-left: 18px; }
+      .card, .mini-card { border-radius: 22px; }
+      .cta { border-radius: 26px; }
+    }
+  
+    /* Final editorial alignment polish */
+    .wrap {
+      width: min(1180px, calc(100% - 44px));
+    }
+
+    .section-grid {
+      grid-template-columns: minmax(330px, 420px) minmax(0, 760px);
+      justify-content: space-between;
+      column-gap: clamp(40px, 5vw, 72px);
+    }
+
+    .split {
+      grid-template-columns: minmax(0, 760px) minmax(320px, 420px);
+      justify-content: space-between;
+      column-gap: clamp(40px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .single-content {
+      max-width: 760px;
+      width: 100%;
+      margin-top: 48px;
+    }
+
+    .single-content .content,
+    .split .content,
+    .section-grid .content {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .content {
+      line-height: 1.66;
+    }
+
+    .content.card,
+    .single-content .card,
+    .split .card {
+      width: 100%;
+    }
+
+    .card {
+      padding: clamp(34px, 3.6vw, 52px);
+    }
+
+    .card p:last-child,
+    .content p:last-child,
+    .mini-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .content li {
+      padding-left: 0.15em;
+    }
+
+    .content ul,
+    .content ol {
+      padding-left: 1.35em;
+    }
+
+    .section-label {
+      padding-top: 8px;
+    }
+
+    .side-image {
+      width: min(100%, 420px);
+      margin-top: 30px;
+    }
+
+    .portrait-img {
+      max-width: 420px;
+      width: 100%;
+      justify-self: end;
+    }
+
+    .disciplines {
+      align-items: stretch;
+    }
+
+    .mini-card {
+      background: rgba(255, 253, 248, 0.74);
+      box-shadow: 0 10px 28px rgba(32, 28, 23, 0.035);
+    }
+
+    @media (max-width: 920px) {
+      .wrap {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .section-grid,
+      .split {
+        grid-template-columns: 1fr;
+        row-gap: 26px;
+      }
+
+      .single-content,
+      .content,
+      .single-content .content,
+      .split .content,
+      .section-grid .content {
+        max-width: 100%;
+      }
+
+      .portrait-img,
+      .side-image {
+        max-width: 100%;
+        width: 100%;
+        justify-self: stretch;
+      }
+    }
+
+    /* Refined final layer: quieter images, cleaner reading plane */
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(216, 196, 164, 0.20), transparent 34rem),
+        linear-gradient(180deg, #fbf7ef 0%, #fffdf8 46%, #f6efe3 100%);
+    }
+
+    section {
+      padding: clamp(64px, 7.2vw, 104px) 0;
+    }
+
+    .nav {
+      box-shadow: 0 10px 30px rgba(32, 28, 23, 0.055);
+    }
+
+    .hero {
+      grid-template-columns: minmax(0, 0.98fr) minmax(360px, 0.82fr);
+      gap: clamp(54px, 6vw, 86px);
+      align-items: center;
+    }
+
+    .hero-image {
+      max-width: 430px;
+      justify-self: end;
+    }
+
+    .hero-image img {
+      height: auto;
+      aspect-ratio: 4 / 5;
+      filter: saturate(0.86) contrast(0.94) brightness(1.04);
+    }
+
+    h1 {
+      max-width: 720px;
+    }
+
+    h2 {
+      max-width: 760px;
+    }
+
+    .section-grid {
+      grid-template-columns: minmax(280px, 360px) minmax(0, 760px);
+      justify-content: space-between;
+      align-items: start;
+      column-gap: clamp(52px, 6vw, 88px);
+    }
+
+    .content,
+    .single-content,
+    .section-grid .content,
+    .split .content,
+    .single-content .content {
+      max-width: 760px;
+    }
+
+    .content {
+      font-size: clamp(18px, 1.13vw, 19.5px);
+      line-height: 1.72;
+      letter-spacing: -0.005em;
+    }
+
+    .content p {
+      margin-bottom: 1.12em;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.58);
+      border: 1px solid rgba(32, 28, 23, 0.085);
+      box-shadow: 0 10px 34px rgba(32, 28, 23, 0.035);
+      padding: clamp(34px, 3.2vw, 48px);
+    }
+
+    .quote {
+      background: transparent;
+    }
+
+    .section-label {
+      color: rgba(159, 128, 80, 0.88);
+      padding-top: 10px;
+    }
+
+    .side-image,
+    .portrait-img {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: none;
+      border: none;
+      background: none;
+    }
+
+    .side-image {
+      margin-top: 26px;
+      justify-self: start;
+    }
+
+    .side-image img,
+    .portrait-img img,
+    .framed-img img {
+      filter: saturate(0.78) contrast(0.92) brightness(1.08);
+    }
+
+    .side-image::after,
+    .portrait-img::after,
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: rgba(251, 247, 239, 0.10);
+    }
+
+    .framed-img,
+    .hero-image {
+      position: relative;
+    }
+
+    .split {
+      grid-template-columns: minmax(0, 760px) minmax(260px, 340px);
+      justify-content: space-between;
+      align-items: start;
+      column-gap: clamp(52px, 6vw, 88px);
+    }
+
+    .disciplines {
+      gap: 20px;
+    }
+
+    .mini-card {
+      padding: 28px;
+      background: rgba(255, 253, 248, 0.60);
+      border-color: rgba(32, 28, 23, 0.085);
+    }
+
+    .single-content {
+      margin-left: 0;
+    }
+
+    .cta {
+      max-width: 900px;
+      border-radius: 30px;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .section-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image,
+      .side-image,
+      .portrait-img {
+        max-width: 100%;
+        justify-self: stretch;
+      }
+
+      .side-image,
+      .portrait-img {
+        aspect-ratio: 16 / 10;
+        margin-top: 18px;
+      }
+
+      .content {
+        font-size: 18px;
+        line-height: 1.68;
+      }
+    }
+
+    /* TWR block and 30/30/40 full-width refinement */
+    .full-width-block {
+      grid-column: 1 / -1;
+      width: 100%;
+      max-width: none;
+      margin-top: 34px;
+    }
+
+    .full-width-block .content {
+      max-width: none;
+    }
+
+    .full-width-block.card {
+      max-width: none;
+    }
+
+    .twr-section {
+      margin-top: clamp(34px, 5vw, 58px);
+      padding: clamp(30px, 5vw, 56px);
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(31, 28, 24, 0.96), rgba(20, 22, 27, 0.96));
+      color: #f4efe6;
+      box-shadow: 0 24px 70px rgba(32, 28, 23, 0.12);
+      border: 1px solid rgba(159, 128, 80, 0.18);
+    }
+
+    .twr-wrap {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .twr-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(201, 171, 109, 0.22);
+      border-radius: 999px;
+      background: rgba(244, 239, 230, 0.04);
+      color: #d8d0c4;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 16px;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .twr-eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c9ab6d;
+      box-shadow: 0 0 10px rgba(201,171,109,.5);
+    }
+
+    .twr-section h1 {
+      color: #f4efe6;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+      max-width: 780px;
+      font-weight: 600;
+    }
+
+    .twr-sub {
+      color: #a8b2c4;
+      font-size: 0.98rem;
+      max-width: 70ch;
+      line-height: 1.6;
+      margin: 0 0 34px;
+    }
+
+    .twr-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .twr-stat {
+      background: rgba(247,241,231,0.05);
+      border: 1px solid rgba(201,171,109,0.15);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .twr-stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a8b2c4;
+      margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+    }
+
+    .twr-stat-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f4efe6;
+    }
+
+    .twr-stat-value.neg {
+      color: #e07070;
+    }
+
+    .twr-panel {
+      background: rgba(247,241,231,0.04);
+      border: 1px solid rgba(201,171,109,0.15);
+      border-radius: 22px;
+      padding: 28px 32px 24px;
+    }
+
+    .twr-legend {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+      color: #a8b2c4;
+      font-family: Arial, sans-serif;
+    }
+
+    .twr-legend span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .twr-legend-line {
+      width: 16px;
+      height: 2px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .twr-chart-wrap {
+      position: relative;
+      width: 100%;
+      height: 360px;
+    }
+
+    .twr-note {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(201,171,109,0.12);
+      font-size: 0.78rem;
+      color: #a8b2c4;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .twr-section { padding: 26px 18px; }
+      .twr-stats { grid-template-columns: 1fr; }
+      .twr-panel { padding: 20px 16px; }
+      .twr-chart-wrap { height: 280px; }
+    }
+
+    /* Final alignment fix without changing TWR visual design */
+    .twr-full-row {
+      border-top: 0;
+      padding-top: 0;
+      padding-bottom: clamp(58px, 7vw, 96px);
+    }
+
+    .twr-full-row .wrap {
+      width: min(1180px, calc(100% - 44px)) !important;
+      max-width: 1180px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .twr-full-row .twr-section {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .twr-full-row .twr-wrap {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .twr-full-row .twr-section h1,
+    .twr-full-row .twr-sub {
+      max-width: 900px !important;
+    }
+
+    .twr-full-row .twr-chart-wrap,
+    .twr-full-row .twr-panel {
+      width: 100% !important;
+    }
+
+    .manifesto-full-row {
+      grid-column: 1 / -1 !important;
+      width: 100% !important;
+      max-width: none !important;
+      margin-top: 48px;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .manifesto-full-row .content,
+    .manifesto-full-row article,
+    .manifesto-full-row .card {
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    .manifesto-full-row article.card {
+      max-width: none !important;
+      width: 100% !important;
+    }
+
+    /* If the old wrapper is still single-content, do not let it squeeze the full-row */
+    .single-content:has(.manifesto-full-row) {
+      max-width: none !important;
+      width: 100% !important;
+    }
+
+    @media (max-width: 920px) {
+      .twr-full-row .wrap {
+        width: min(100% - 28px, 1180px) !important;
+      }
+    }
+
+.twr-full-iframe .wrap{
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+}
+.twr-full-iframe{
+  padding:60px 0;
+}
+@media (max-width:640px){
+  .twr-full-iframe iframe{ height:520px; }
+}
+.disclaimer {
+  text-align: center;
+  padding: 40px 20px 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(32, 28, 23, 0.75);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.disclaimer strong {
+  font-weight: 600;
+}
+
+.manifesto-list li {
+  text-decoration: none;
+  cursor: default;
+}
+
+.manifesto-access-link {
+  display: inline-block;
+  color: #c0392b !important;
+  text-decoration: none !important;
+  font-size: 0.88em;
+  transition: opacity 0.2s;
+}
+
+.manifesto-access-link:hover {
+  opacity: 0.72;
+  text-decoration: underline !important;
+}
+
+.manifesto-level,
+.manifesto-title {
+  cursor: default;
+  color: inherit;
+}
+.letters-archive-wrap {
+  padding: 22px 0 10px;
+  border-top: 1px solid rgba(32,28,23,0.10);
+}
+
+.letters-archive-label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #201c17;
+  margin-bottom: 10px;
+}
+
+.letters-tree {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 0;
+}
+
+.tree-month-row {
+  padding-left: 18px;
+}
+
+.tree-letter-row {
+  padding-left: 36px;
+}
+
+.tree-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
+  color: #706657;
+  cursor: pointer;
+  transition: transform 0.18s;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.tree-toggle.open {
+  transform: rotate(90deg);
+}
+
+.tree-year {
+  color: #c0392b;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: opacity 0.2s;
+}
+.tree-year:hover { opacity: 0.7; }
+
+.tree-month {
+  color: #c0392b;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: opacity 0.2s;
+}
+.tree-month:hover { opacity: 0.7; }
+
+.tree-count {
+  color: #a09080;
+  font-size: 0.8rem;
+}
+
+.tree-letter-link {
+  color: #9f8050;
+  text-decoration: none;
+  font-size: 0.84rem;
+  transition: opacity 0.2s;
+}
+.tree-letter-link:hover { opacity: 0.7; text-decoration: underline; }
+
+.tree-children {
+  overflow: hidden;
+}
+
+
+    /* ═══ IMAGE OVERRIDE — final clean layer ═══ */
+    .framed-img {
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+      border-radius: 20px !important;
+      overflow: visible !important; /* must be visible so sticky on parent works */
+    }
+
+    .framed-img img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+      border-radius: 20px !important;
+    }
+
+    .side-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      aspect-ratio: 3 / 4 !important; /* larger — tall portrait format */
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+      border-radius: 20px !important;
+      overflow: visible !important; /* must be visible so sticky on parent works */
+      margin-top: 0 !important;
+    }
+
+    .side-image img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+      filter: none !important;
+      border-radius: 20px !important;
+    }
+
+    .portrait-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+      border-radius: 16px !important;
+      overflow: visible !important;
+    }
+
+    .portrait-img img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+      filter: none !important;
+      border-radius: 16px !important;
+    }
+
+    /* ═══ FINAL LAYOUT & STICKY FIX ═══ */
+
+    /* Grid: equal columns, images left, text right */
+    .section-grid {
+      grid-template-columns: minmax(280px, 420px) minmax(0, 760px) !important;
+      column-gap: clamp(38px, 5.5vw, 76px) !important;
+      align-items: start !important;
+    }
+
+    /* Image column sticks while text scrolls */
+    .section-label {
+      position: sticky !important;
+      top: 100px !important;
+      align-self: start !important;
+      display: block !important;
+      padding-top: 0 !important;
+    }
+
+    /* Large portrait images */
+    .framed-img,
+    .side-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      aspect-ratio: 3 / 4 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: visible !important; /* CRITICAL: hidden breaks sticky */
+      border-radius: 20px !important;
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .framed-img img,
+    .side-image img {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: none !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      display: block !important;
+      border-radius: 20px !important;
+    }
+
+    /* Special: dark Epictetus vertical image */
+    img[src$="img-epictetus-discipline.png"] {
+      object-fit: cover !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    figure:has(img[src$="img-epictetus-discipline.png"]) {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+
+    /* Portrait (wide) images */
+    .portrait-img {
+      width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      overflow: visible !important;
+      border-radius: 16px !important;
+      border: none !important;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .portrait-img img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      border-radius: 16px !important;
+    }
+
+    /* Split layout */
+    .split {
+      grid-template-columns: minmax(0, 760px) minmax(280px, 420px) !important;
+      align-items: start !important;
+    }
+
+    /* Text column starts from top */
+    .section-grid .content,
+    .section-grid .content.card {
+      align-self: start !important;
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 920px) {
+      .section-grid,
+      .split {
+        grid-template-columns: 1fr !important;
+        row-gap: 24px !important;
+      }
+
+      .section-label {
+        position: static !important;
+        top: auto !important;
+      }
+
+      .framed-img,
+      .side-image {
+        aspect-ratio: 4 / 3 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .framed-img,
+      .side-image {
+        border-radius: 14px !important;
+      }
+
+      .framed-img img,
+      .side-image img {
+        border-radius: 14px !important;
+      }
+    }
+    /* ════════════════════════════════════ */
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="brand">Epictetus FO</div>
+    <div class="nav-note">Discipline · Time · Compounding</div>
+  </nav>
+
+  <main>
+    <header class="wrap hero">
+      <div>
+        <div class="eyebrow">Family Office</div>
+        <h1>Epictetus Fund: Stoicism as a Path to Sustainable Financial Success</h1>
+<div class="quote">
+          “There are things that are up to us, and things that are not up to us. Wisdom is being able to tell the difference and focus on the first.”
+          <small>Epictetus, Stoic philosopher (c. 50–135 AD), author of the Enchiridion.</small>
+        </div>
+      </div>
+      <div class="hero-image" style="display:flex;flex-direction:column;justify-content:space-between;padding:28px 28px 0;background:linear-gradient(180deg,rgba(31,28,24,0.98),rgba(20,22,27,0.98));border:1px solid rgba(159,128,80,0.22);overflow:hidden;">
+        <div>
+          <div class="twr-eyebrow" style="margin-bottom:14px;">Live Performance Record</div>
+          <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:20px;">
+            <div class="twr-stat"><div class="twr-stat-label">Period</div><div class="twr-stat-value" style="font-size:.9rem;">1 Jan – 27 Apr 2026</div></div>
+            <div class="twr-stat"><div class="twr-stat-label">Max drawdown</div><div class="twr-stat-value neg" style="font-size:.9rem;">−8.08%</div></div>
+            <div class="twr-stat" style="grid-column:1/-1;border-color:#1d9e75;"><div class="twr-stat-label">TWR total</div><div class="twr-stat-value" style="color:#4dc49a;font-size:1.3rem;">+8.84%</div></div>
+          </div>
+          <div class="twr-legend" style="margin-bottom:12px;">
+            <span><span class="twr-legend-line" style="background:#c9ab6d;"></span>Long</span>
+            <span><span class="twr-legend-line" style="background:#d85a30;"></span>Short</span>
+            <span><span class="twr-legend-line" style="background:#1d9e75;height:3px;"></span>Total</span>
+          </div>
+        </div>
+        <div style="position:relative;width:100%;flex:1;min-height:220px;">
+          <canvas id="twrChart" role="img" aria-label="Cumulative TWR Stoic Core Jan-Apr 2026. Final: +8.84%">TWR ends at +8.84%.</canvas>
+        </div>
+      </div>
+    </header>
+
+    <!-- Letters Archive tree -->
+    <div class="wrap letters-archive-wrap">
+      <div class="letters-archive-label">Letters Archive:</div>
+      <div class="letters-tree">
+
+        <!-- 2026 row -->
+        <div class="tree-row">
+          <span class="tree-toggle" onclick="toggleNode(this)" aria-expanded="false">&#9658;</span>
+          <a href="letter-april-2026.html" class="tree-year">2026</a>
+          <span class="tree-count">(1)</span>
+        </div>
+
+        <!-- months level -->
+        <div class="tree-children" style="display:none;">
+
+          <!-- April row -->
+          <div class="tree-row tree-month-row">
+            <span class="tree-toggle" onclick="toggleNode(this)" aria-expanded="false">&#9658;</span>
+            <a href="letter-april-2026.html" class="tree-month">April</a>
+            <span class="tree-count">(1)</span>
+          </div>
+
+          <!-- letters level -->
+          <div class="tree-children tree-letters" style="display:none;">
+            <div class="tree-row tree-letter-row">
+              <a href="letter-april-2026.html" class="tree-letter-link">Letter №1 | April 2026</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap section-grid">
+        <aside class="section-label">
+          <figure class="framed-img side-image">
+            <img src="assets/img-foundation.png" alt="Ancient column with risk management words" />
+          </figure>
+        </aside>
+        <article class="content card">
+          <p>We live in a world where markets move faster than we can read the news. Crises, rumours and randomness crash over us like waves — and it often feels like we control nothing.</p>
+          <p>But there is one thing we’ve learned for sure: we do not control the market. We do control ourselves.</p>
+          <div class="quote">
+            “Let your mind be like a rock against which the waves break: they crash and howl, but the rock stands.”
+            <small>Zeno of Citium (c. 334–255 BC), Stoic philosopher from Cyprus, teacher of Epictetus.</small>
+          </div>
+          <p>Our mission is not to predict the future. Our mission is to build the ability to make sound decisions today, so we tilt the odds in our favour tomorrow. This is not about luck. It is about discipline, clarity and honesty.</p>
+        </article>
+      </div>
+    </section>
+<section>
+      <div class="wrap section-grid">
+        <aside class="section-label">
+          <figure class="framed-img side-image wide-side">
+            <img src="assets/img-learning.png" alt="Ancient temple by the sea with discipline and self-mastery inscription" />
+          </figure>
+        </aside>
+        <article class="content">
+          <p>This site is part of a 25‑year real‑time learning project. In practice, we want to show how applied Stoicism, time and compounding can take you from poverty into the middle class, or from a mid‑sized business into a large one. This is the path we’re walking ourselves, and we’re documenting it openly so that anyone who shares this mindset can learn alongside us.</p>
+          <p>Epictetus Fund is not “philosophy on the side” and “business on the side”. It is the journal of a player‑philosopher who puts his own time and capital at risk and shows his decisions, mistakes and lessons in real life.</p>
+          <p>We publish the fund’s TWR almost in real time and we do not hide drawdowns behind pretty averages. By its very meaning, TWR is all about whether the fund manager made new money or lost old cash over the reporting period — basically, a proper gut-check on how well the fund manager did their job. Once a quarter, we write letters to partners in the spirit of Buffett — in plain English, with no corporate fog: what worked, what didn’t, and what we learned.</p>
+          
+          <p>Stoicism was not invented to “generate alpha”. But one of our goals is to show, in practice, how easily it can do exactly that when you treat it as a practical tool — in our case, inside a real financial business.</p>
+
+
+      </div>
+
+      </div>
+    </div>
+
+      <p class="twr-note">
+        
+      </p>
+    </div>
+  </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="wrap">
+        <h2>Three Stoic Disciplines: Desire, Action, Assent</h2>
+        <div class="content">
+          <p>Stoic philosophy rests on three core disciplines. We applied them to a financial business — and they work. Here’s what that looks like from day one.</p>
+        </div>
+
+        <div class="disciplines">
+          <article class="mini-card">
+            <h3>1. The Discipline of Desire: what we want</h3>
+            <p>We want to build a serious financial business over 25 years — a fund with consistent income generation, clean intentions and transparency to the outside world. In our specific case, that also means moving beyond “mid‑sized” into “large”.</p>
+          </article>
+          <article class="mini-card">
+            <h3>2. The Discipline of Action: what we do</h3>
+            <p>To turn that desire into reality, over seven years we built our own way of running a financial business. We call it the Manifesto — a five‑layer operating system.</p>
+          </article>
+          <article class="mini-card">
+            <h3>3. The Discipline of Assent: how we improve ourselves and our decisions</h3>
+            <p>The discipline of assent is about training ourselves as portfolio managers and capital owners. How do you come out of 25 years with a win? How do you handle anger, anxiety and greed?</p>
+          </article>
+        </div>
+
+        <div class="split">
+          <article class="content card">
+            <p>We do not want:</p>
+            <ul>
+              <li>instant fame</li>
+              <li>“guaranteed” high returns</li>
+              <li>winning at any cost</li>
+            </ul>
+            <p>We do want:</p>
+            <ul>
+              <li>long‑term resilience</li>
+              <li>honesty with clients and with ourselves</li>
+              <li>a legacy that outlives us</li>
+            </ul>
+            <p>To desire, in the Stoic sense, is to choose what is within our control and to let go of what is not. Simple to say. Hard to live.</p>
+          </article>
+          <figure class="framed-img portrait-img">
+            <img src="assets/img-wide.png" alt="Epictetus statue with temple and compounding inscription" />
+          </figure>
+        </div>
+
+        <div class="single-content">
+          <div class="manifesto-full-row">
+            <article class="content card">
+            <p>To turn that desire into reality, over seven years we built our own way of running a financial business. We call it the Manifesto — a five‑layer operating system:</p>
+            <ol class="manifesto-list">
+ <ol class="manifesto-list">
+
+  <li>
+      <span class="manifesto-level">Manifesto Level I</span>
+      <span class="manifesto-title">Philosophy of choice (Epictetus), mission, scientific mindset, Fund Code</span>
+      <a href="https://epictetusfo.com/Manifesto-Level-1.pdf" target="_blank" class="manifesto-access manifesto-access-link">(click to get access)</a>
+  </li>
+
+  <li>
+      <span class="manifesto-level">Manifesto Level II</span>
+      <span class="manifesto-title">A 25-year master plan</span>
+      <a href="https://epictetusfo.com/Manifesto-Level-II.pdf" target="_blank" class="manifesto-access manifesto-access-link">(click to get access)</a>
+  </li>
+
+  <li>
+      <span class="manifesto-level">Manifesto Level III</span>
+      <span class="manifesto-title">Execution Manual</span>
+      <a href="https://epictetus-fo.ghost.io/#/portal/signup/69f38cff82c08300082e7054/yearly" target="_blank" class="manifesto-access manifesto-access-link">(subscribe to get access)</a>
+  </li>
+
+  <li>
+      <span class="manifesto-level">Manifesto Level IV</span>
+      <span class="manifesto-title">Annual dossiers and annual execution</span>
+      <a href="https://epictetus-fo.ghost.io/#/portal/signup/69f38cff82c08300082e7054/yearly" target="_blank" class="manifesto-access manifesto-access-link">(subscribe to get access)</a>
+  </li>
+
+  <li>
+      <span class="manifesto-level">Manifesto Level V</span>
+      <span class="manifesto-title">Post-mortem analysis and the steward-level of owners</span>
+      <a href="https://epictetus-fo.ghost.io/#/portal/signup/69f38cff82c08300082e7054/yearly" target="_blank" class="manifesto-access manifesto-access-link">(subscribe to get access)</a>
+  </li>
+
+</ol>
+            <p>We launched a 25‑year project called “Epictetus Fund” — fully public, with honest TWR reporting and letters written in Buffett’s style. We show, in the open, how Stoicism is applied inside a real financial business.</p>
+            <p>No hype. No dirt. No fluff.</p>
+            <p>We just execute the Manifesto. Step by step. Day by day. Year by year.</p>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+<section>
+      <div class="wrap section-grid">
+        <aside class="section-label">
+          <figure class="framed-img side-image">
+            <img src="assets/img-assent.png" alt="Ancient column with focus on what you can control inscription" />
+          </figure>
+        </aside>
+        <article class="content card">
+          <p>Here Stoicism meets its modern heirs in the work of Kahneman and Tversky. They translated old Stoic truths into the language of behavioural economics:</p>
+          <ul>
+            <li>Loss aversion → Stoic acceptance of loss as part of how the world works</li>
+            <li>Overconfidence → Stoic indifference to the crowd’s opinion</li>
+            <li>Herd behaviour → Stoic independence from the majority view</li>
+            <li>Illusion of control → Stoic separation of what is up to us from what is not</li>
+          </ul>
+          <p>We don’t “fight” these instincts head‑on. We learn to see their nature — and refuse to let them drive the bus.</p>
+          <p>This is how the three Stoic disciplines — desire, action and assent — become the operating system of the Fund. Desire sets the frame: what we are aiming at and what we will not accept. Action is written into the Manifesto and our daily routines. Assent is tested by reality — through our honest TWR, visible drawdowns and quarterly Buffett‑style letters where we publicly dissect our decisions as part of the Epictetus Fund 25‑year experiment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap section-grid">
+        <aside class="section-label">
+          <figure class="framed-img side-image">
+            <img src="assets/img-analysis.png" alt="Build wealth patiently through time discipline and self-mastery" />
+          </figure>
+        </aside>
+        <article class="content">
+          <h2>Our View on Analysis: Technical and Fundamental</h2>
+          <p>You will rarely see us talk about technical or fundamental analysis on this site or in our letters. That work lives in the lower levels of the Manifesto:</p>
+          <ul>
+            <li>Level 4 — annual dossiers and annual execution</li>
+            <li>Level 5 — post‑mortems and the steward‑level of owners</li>
+          </ul>
+          <p>This is internal work, not a public debate. We do not ignore it. On the contrary: we treat it as technical, and we are happy to let AI handle the data crunching, pattern‑spotting and risk calculations faster and more accurately than a human.</p>
+          <p>Our job is not to compete with AI, but to see where humans are irreplaceable: making the actual calls, owning the responsibility, maintaining our 30/30/40 structure (“World All‑Stars”) and staying anchored in Stoic philosophy, deliberate choice and process.</p>
+        </article>
+      </div>
+
+      <div class="wrap full-width-block">
+        <article class="content card">
+          <p>We believe in a 30/30/40 build:</p>
+          <ul>
+            <li>30% — a systematic market engine (beta core): passive participation in the Train of Progress</li>
+            <li>30% — a concentrated growth sleeve (alpha pool): focus on high‑potential growth</li>
+            <li>40% — organic dividend growth (defensive anchor): a stabilising stream of free cash flow from dividends</li>
+          </ul>
+          <p>Our focus is Stoic philosophy, choice and process. Not forecasts. Action. The results of that work are visible in our honest TWR, which we publish almost in real time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap section-grid">
+        <aside class="section-label">
+          <figure class="framed-img side-image">
+            <img src="assets/img-epictetus-discipline.png" alt="Epictetus — Discipline Time Compounding" />
+          </figure>
+        </aside>
+        <article class="content card">
+          <p class="strong-line">We know our final station. The names of the intermediate stops are of secondary importance.</p>
+          <p>We do not know the exact pace at which we will generate free cash flow in any given year.</p>
+          <p>We do not make promises.</p>
+          <p>But we see our target as modest: roughly doubling capital every seven years. That is enough so that, 25 years from now, the Fund can generate a steady profit stream that outperforms most financial and operating businesses in the world working with the same initial capital.</p>
+          <p>Because time and compounding are on our side.</p>
+          <p>Epictetus Fund is not just a business. It is a path.</p>
+          <p>And we walk it together: family, team, relatives, partners — and, of course, AI.</p>
+          <p>Ahead lies big business. Today is live‑fire testing of the disciplines.</p>
+          <p>Everyone participates on equal terms. Everyone learns. Everyone grows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap cta">
+        <p>P.S. The first two levels of the Manifesto are public: our quarterly letters and our honest TWR are open to anyone following the Epictetus Fund experiment. Levels three, four and five are available by subscription: there we open up the full operating system of the Fund, the tickers of the “World All‑Stars” portfolio, and near real‑time alerts on every rebalance, every buy and sell in the underlying assets and the derivatives on them — plus the steward‑level: post‑mortems, error reviews and rapid course‑corrections when needed.</p>
+        <p class="strong-line">This is no longer the shop window. It is the workshop — where you see the engine, not just the speedometer.</p>
+        <p>Annual access to the Epictetus Fund workshop is 99 dollars a year. One clear price. No hidden fees. No fine print.</p>
+        <a href="https://epictetus-fo.ghost.io/#/portal/signup/69f38cff82c08300082e7054/yearly" class="button">
+  Self-Improving
+</a>
+      </div>
+    </section>
+  </main>
+<footer class="disclaimer">
+  <div class="wrap">
+    <strong>
+      Disclaimer: This platform is for educational purposes only. We do not provide financial, investment, tax, or legal advice. We do not accept or manage client capital. All content is for informational purposes only and should not be considered as investment advice. You alone assume the responsibility of evaluating the risks before making any investment decisions.
+    </strong>
+  </div>
+</footer>
+
+  <footer>
+    <div class="wrap" style="text-align:center;">
+      <div style="font-size:1.05rem;font-weight:600;letter-spacing:0.08em;margin-bottom:8px;">Epictetus FO</div>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:0.97rem;color:#706657;">
+        Contact: <a href="mailto:epictetusfo@gmail.com" style="color:#c0392b;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">epictetusfo@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+ 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  if (!document.getElementById('twrChart')) return;
+  var data = [
+    ["Jan 01",0,0,0],["Jan 02",0.139,-0.070,0.069],["Jan 05",0.749,-0.001,0.748],
+    ["Jan 06",1.817,-0.271,1.544],["Jan 07",1.224,-0.206,1.018],["Jan 08",1.021,-0.163,0.859],
+    ["Jan 09",1.676,-0.063,1.615],["Jan 12",1.410,-0.007,1.405],["Jan 13",0.942,0.037,0.981],
+    ["Jan 14",0.065,0.076,0.143],["Jan 15",0.710,0.120,0.834],["Jan 16",0.870,0.134,1.008],
+    ["Jan 19",0.864,0.134,1.002],["Jan 20",-1.165,0.058,-1.107],["Jan 21",0.352,0.049,0.403],
+    ["Jan 22",2.219,-0.020,2.201],["Jan 23",2.896,-0.074,2.824],["Jan 26",3.580,-0.126,3.453],
+    ["Jan 27",3.858,-0.208,3.645],["Jan 28",3.519,-0.296,3.216],["Jan 29",5.183,-0.671,4.488],
+    ["Jan 30",4.357,-0.448,3.901],["Feb 02",4.863,-0.422,4.431],["Feb 03",3.434,-0.418,3.012],
+    ["Feb 04",1.955,-0.720,1.228],["Feb 05",0.677,-0.857,-0.180],["Feb 06",2.398,-0.433,1.952],
+    ["Feb 09",3.053,-0.300,2.741],["Feb 10",2.552,-0.275,2.266],["Feb 11",3.159,-0.294,2.853],
+    ["Feb 12",2.016,-0.447,1.556],["Feb 13",1.975,-0.359,1.605],["Feb 16",1.974,-0.359,1.604],
+    ["Feb 17",1.596,-0.245,1.342],["Feb 18",2.429,-0.208,2.211],["Feb 19",2.344,-0.099,2.238],
+    ["Feb 20",2.936,-0.085,2.844],["Feb 23",1.479,-0.186,1.283],["Feb 24",2.042,-0.102,1.932],
+    ["Feb 25",3.063,-0.012,3.043],["Feb 26",2.496,0.177,2.671],["Feb 27",1.840,0.070,1.905],
+    ["Mar 02",2.352,0.113,2.460],["Mar 03",1.320,0.073,1.386],["Mar 04",2.640,0.165,2.799],
+    ["Mar 05",2.302,0.182,2.479],["Mar 06",0.715,-0.063,0.639],["Mar 09",1.718,0.161,1.866],
+    ["Mar 10",1.862,0.231,2.083],["Mar 11",2.025,0.234,2.248],["Mar 12",0.282,0.368,0.639],
+    ["Mar 13",-0.229,0.316,0.074],["Mar 16",0.740,0.461,1.190],["Mar 17",0.978,0.474,1.440],
+    ["Mar 18",-0.257,0.391,0.116],["Mar 19",-0.838,0.486,-0.372],["Mar 20",-2.787,0.361,-2.454],
+    ["Mar 23",-1.932,0.480,-1.481],["Mar 24",-2.809,0.383,-2.456],["Mar 25",-2.534,0.338,-2.225],
+    ["Mar 26",-5.087,-0.029,-5.143],["Mar 27",-7.047,-0.324,-7.382],["Mar 30",-7.516,-0.573,-8.081],
+    ["Mar 31",-4.389,0.002,-4.441],["Apr 01",-3.121,0.229,-2.956],["Apr 02",-2.942,0.295,-2.713],
+    ["Apr 03",-2.942,0.295,-2.713],["Apr 06",-2.373,0.439,-2.003],["Apr 07",-1.837,0.395,-1.509],
+    ["Apr 08",1.259,0.632,1.831],["Apr 09",1.951,0.537,2.430],["Apr 10",1.774,0.652,2.370],
+    ["Apr 13",2.823,0.628,3.400],["Apr 14",4.703,0.190,4.840],["Apr 15",5.447,0.088,5.479],
+    ["Apr 16",5.894,0.125,5.965],["Apr 17",7.267,0.067,7.277],["Apr 20",6.877,0.165,6.993],
+    ["Apr 21",6.694,0.124,6.766],["Apr 22",8.065,-0.214,7.778],["Apr 23",7.446,-0.071,7.314],
+    ["Apr 24",8.465,-0.207,8.186],["Apr 27",9.324,-0.395,8.838]
+  ];
+  new Chart(document.getElementById('twrChart'), {
+    type: 'line',
+    data: {
+      labels: data.map(function(d){return d[0];}),
+      datasets: [
+        {label:'Long', data:data.map(function(d){return d[1];}), borderColor:'#c9ab6d', borderWidth:1.5, pointRadius:0, pointHoverRadius:4, fill:false, tension:0.2, spanGaps:true, borderDash:[4,3]},
+        {label:'Short', data:data.map(function(d){return d[2];}), borderColor:'#d85a30', borderWidth:1.5, pointRadius:0, pointHoverRadius:4, fill:false, tension:0.2, spanGaps:true, borderDash:[2,3]},
+        {label:'Total', data:data.map(function(d){return d[3];}), borderColor:'#1d9e75', borderWidth:2.5, pointRadius:0, pointHoverRadius:5, fill:{target:'origin',above:'rgba(29,158,117,0.07)',below:'rgba(163,45,45,0.08)'}, tension:0.2}
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          backgroundColor:'rgba(8,13,21,0.92)', borderColor:'rgba(201,171,109,0.2)', borderWidth:1,
+          titleColor:'#d8d0c4', bodyColor:'#a8b2c4', padding:10,
+          callbacks:{label:function(ctx){return '  '+ctx.dataset.label+':  '+ctx.parsed.y.toFixed(2)+'%';}}
+        }
+      },
+      scales:{
+        x:{grid:{color:'rgba(255,255,255,0.05)'}, ticks:{color:'#a8b2c4',font:{size:10},autoSkip:true,maxTicksLimit:14,maxRotation:45}},
+        y:{grid:{color:'rgba(255,255,255,0.05)'}, ticks:{color:'#a8b2c4',font:{size:11},callback:function(v){return v.toFixed(1)+'%';}}}
+      }
+    }
+  });
+})();
+</script>
+  
+</footer>
+
+<script>
+function toggleNode(toggle) {
+  var isOpen = toggle.classList.contains('open');
+  toggle.classList.toggle('open', !isOpen);
+  toggle.setAttribute('aria-expanded', !isOpen);
+  var row = toggle.closest('.tree-row');
+  var children = row.nextElementSibling;
+  if (children && children.classList.contains('tree-children')) {
+    children.style.display = isOpen ? 'none' : 'block';
+  }
+}
+</script>
+</body>
+</html>
