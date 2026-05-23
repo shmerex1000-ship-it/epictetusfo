@@ -1308,6 +1308,124 @@
       }
     }
     /* ═══════════════════════════════════════════════════════════════ */
+
+
+    /* ═══ NEW SIX HERO VISUALS: larger editorial image system ═══ */
+    .wrap {
+      width: min(1360px, calc(100% - 44px)) !important;
+    }
+
+    .section-grid {
+      grid-template-columns: minmax(430px, 610px) minmax(0, 720px) !important;
+      column-gap: clamp(34px, 4.8vw, 74px) !important;
+      align-items: start !important;
+    }
+
+    .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .section-label,
+    .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .framed-img,
+    .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .side-image {
+      width: 100% !important;
+      max-width: 610px !important;
+      margin: 0 !important;
+    }
+
+    .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .framed-img img,
+    .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .side-image img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      border-radius: 22px !important;
+      filter: none !important;
+    }
+
+    .split {
+      grid-template-columns: minmax(0, 720px) minmax(430px, 610px) !important;
+      column-gap: clamp(34px, 4.8vw, 74px) !important;
+      align-items: start !important;
+    }
+
+    .split .portrait-img {
+      width: 100% !important;
+      max-width: 610px !important;
+      justify-self: end !important;
+      margin: 0 !important;
+    }
+
+    .split .portrait-img img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      border-radius: 22px !important;
+      filter: none !important;
+    }
+
+    .section-grid:has(img[src$="img-epictetus-discipline.png"]) {
+      grid-template-columns: minmax(430px, 610px) minmax(0, 720px) !important;
+    }
+
+    .section-grid:has(img[src$="img-epictetus-discipline.png"]) .section-label,
+    .section-grid:has(img[src$="img-epictetus-discipline.png"]) .framed-img,
+    .section-grid:has(img[src$="img-epictetus-discipline.png"]) .side-image {
+      width: 100% !important;
+      max-width: 610px !important;
+      margin: 0 !important;
+    }
+
+    .section-grid:has(img[src$="img-epictetus-discipline.png"]) img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      border-radius: 22px !important;
+      filter: none !important;
+    }
+
+    .content,
+    .single-content,
+    .section-grid .content,
+    .split .content,
+    .single-content .content {
+      max-width: 720px !important;
+    }
+
+    @media (max-width: 1100px) {
+      .section-grid,
+      .section-grid:has(img[src$="img-epictetus-discipline.png"]),
+      .split {
+        grid-template-columns: 1fr !important;
+        row-gap: 26px !important;
+      }
+
+      .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .section-label,
+      .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .framed-img,
+      .section-grid:not(:has(img[src$="img-epictetus-discipline.png"])) .side-image,
+      .section-grid:has(img[src$="img-epictetus-discipline.png"]) .section-label,
+      .section-grid:has(img[src$="img-epictetus-discipline.png"]) .framed-img,
+      .section-grid:has(img[src$="img-epictetus-discipline.png"]) .side-image,
+      .split .portrait-img,
+      .content,
+      .single-content,
+      .section-grid .content,
+      .split .content,
+      .single-content .content {
+        max-width: 100% !important;
+        width: 100% !important;
+        justify-self: stretch !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1360px) !important; }
+      .framed-img img,
+      .side-image img,
+      .portrait-img img {
+        border-radius: 14px !important;
+      }
+    }
+    /* ═══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
