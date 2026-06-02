@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message №2 | May 2026 — Epictetus FO</title>
+  <style>
+    :root {
+      --ivory: #fbf7ef;
+      --ivory-2: #f5eddf;
+      --beige: #e9ddc9;
+      --text: #201c17;
+      --muted: #706657;
+      --gold: #9f8050;
+      --gold-soft: rgba(159, 128, 80, 0.22);
+      --line: rgba(32, 28, 23, 0.12);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--ivory) 0%, #fffdf8 44%, var(--ivory-2) 100%);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 20;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1120px, calc(100% - 32px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 18px;
+      border: 1px solid rgba(32, 28, 23, 0.10);
+      border-radius: 999px;
+      background: rgba(251, 247, 239, 0.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(32, 28, 23, 0.055);
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 0.65; }
+
+    .wrap { width: min(780px, calc(100% - 44px)); margin: 0 auto; }
+
+    .letter-header {
+      padding: 140px 0 56px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 11px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.06;
+    }
+
+    h2 {
+      margin: 2.4em 0 0.7em;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: clamp(17px, 1.4vw, 20px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .letter-meta { color: var(--muted); font-size: 14px; letter-spacing: 0.04em; }
+
+    .letter-body { padding-bottom: 120px; }
+
+    .letter-body p {
+      margin: 0 0 1.3em;
+      font-size: clamp(17px, 1.1vw, 19px);
+    }
+
+    .letter-body ul {
+      margin: 0 0 1.3em;
+      padding-left: 1.4em;
+      font-size: clamp(17px, 1.1vw, 19px);
+    }
+
+    .letter-body ul li { margin: 0 0 0.5em; }
+
+    .virtue-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0 36px;
+    }
+
+    .virtue-card {
+      background: rgba(255,253,248,0.72);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px 26px;
+    }
+
+    .virtue-name {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .virtue-card p { margin: 0 !important; font-size: 15px !important; color: var(--muted); line-height: 1.6; }
+
+    .quote-block {
+      margin: 36px 0;
+      padding: 24px 0 24px 26px;
+      border-left: 2px solid var(--gold);
+      font-size: clamp(18px, 1.5vw, 22px);
+      line-height: 1.45;
+      color: #2a241d;
+    }
+
+    .quote-block cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      font-style: normal;
+      color: var(--muted);
+    }
+
+    .data-card {
+      background: rgba(255,253,248,0.72);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin: 28px 0;
+    }
+
+    .data-card h3 { margin: 0 0 18px; }
+
+    .structure-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .structure-col h4 {
+      margin: 0 0 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .structure-col ul { margin: 0; padding: 0; list-style: none; }
+
+    .structure-col ul li {
+      font-size: 15px;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .structure-col ul li:last-child { border-bottom: none; }
+    .structure-col ul li .val { font-weight: 600; color: var(--gold); }
+
+    .trades-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 20px 0 0;
+    }
+
+    .trades-col h4 {
+      margin: 0 0 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 400;
+    }
+
+    .trades-col.buys h4 { color: #1d9e75; }
+    .trades-col.sells h4 { color: #c0392b; }
+
+    .trades-col ul { margin: 0; padding: 0; list-style: none; }
+
+    .trades-col ul li {
+      font-size: 14px;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trades-col ul li:last-child { border-bottom: none; }
+
+    .block-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin: 14px 0 6px;
+      display: block;
+    }
+
+    .twr-result {
+      background: linear-gradient(180deg, rgba(31,28,24,0.97), rgba(20,22,27,0.97));
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin: 36px 0;
+      color: #f4efe6;
+      border: 1px solid rgba(159,128,80,0.2);
+    }
+
+    .twr-result .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #a8b2c4;
+      margin-bottom: 8px;
+    }
+
+    .twr-result .value {
+      font-size: clamp(38px, 6vw, 58px);
+      font-weight: 600;
+      color: #4dc49a;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .twr-result .note {
+      font-size: 14px;
+      color: rgba(244,239,230,0.65);
+      line-height: 1.55;
+    }
+
+    .error-card {
+      border-radius: 20px;
+      padding: 26px 30px;
+      margin: 20px 0;
+      border: 1px solid var(--line);
+    }
+
+    .error-card.level1 { background: rgba(192,57,43,0.05); border-color: rgba(192,57,43,0.2); }
+    .error-card.level34 { background: rgba(159,128,80,0.06); border-color: rgba(159,128,80,0.25); }
+
+    .error-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .error-card.level1 .error-tag { background: rgba(192,57,43,0.1); color: #c0392b; }
+    .error-card.level34 .error-tag { background: rgba(159,128,80,0.12); color: var(--gold); }
+
+    .error-card p { margin: 0 0 0.8em !important; font-size: 15px !important; }
+    .error-card p:last-child { margin-bottom: 0 !important; }
+
+    .closing-note {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 40px 0 60px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    a.level-link {
+      color: #c0392b;
+      text-decoration: none;
+      font-style: inherit;
+      border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+      transition: border-color 0.2s;
+    }
+    a.level-link:hover {
+      border-bottom-color: #c0392b;
+    }
+
+    @media (max-width: 640px) {
+      .virtue-grid, .structure-grid, .trades-grid { grid-template-columns: 1fr; }
+      .letter-header { padding-top: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="brand">Epictetus FO</a>
+    <a href="index.html" class="nav-back">← Back</a>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <header class="letter-header">
+        <div class="eyebrow">Letters Archive · 2026</div>
+        <h1>Message №2<br>May 2026</h1>
+        <div class="letter-meta">Epictetus Fund · Monthly Letter · Published June 2026</div>
+      </header>
+
+      <div class="letter-body">
+
+        <p>Dear subscribers,</p>
+        <p>this is Message No. 2 | May 2026.</p>
+        <p>The Stoic level in our system is eternal. This philosophy has already lasted around 2,500 years and, unlike many intellectual fads, hasn't become outdated — it's become more in demand.</p>
+        <p>In a world where the investor's main problem isn't "bad markets" but their own cognitive biases, Stoicism offers not comfort but a practical toolkit: what's within our control, what isn't, and how to deal with inevitable drawdowns and our own mistakes.</p>
+        <p>That's why for Epictetus Fund, Stoicism isn't decoration or "quotes for Telegram" — it's the operating system on which the entire architecture is built.</p>
+
+        <h2>Seneca and the Progressors</h2>
+
+        <p>One of our key reference points is Seneca with his "Letters to Lucilius." In one letter, he offers a simple but honest picture of how human learning works.</p>
+        <p>At the bottom of the pyramid are those who aren't interested in themselves or their thinking: for them, neither philosophy nor markets nor their own mistakes become a subject of work. Seneca calls them inquisitive-less.</p>
+        <p>A bit higher are those he calls progressors — people who already see their biases, track their mistakes, and try to fix them. Seneca included himself here.</p>
+        <p>At the very top are the sages. In classical Stoic tradition, almost all early Stoics assigned only Socrates to them — and no one else.</p>
+        <p>We consciously place Epictetus Fund and everyone reading these letters not among "ready-made sages" but in the layer of progressors. This is more honest both to the market and to history: we still make mistakes, but we no longer let them pass unnoticed.</p>
+        <p>The Epictetus Fund Manifesto is structured exactly in Seneca's style: it doesn't assume we're already sages. Instead, it gives a five-level framework where you can honestly admit: "here we performed as progressors, and here we slipped down a floor."</p>
+        <p>In this second message, dedicated to May 2026, we'll travel this route from top to bottom again: from the eternal Stoic level — to portfolio structure, specific trades, and the places where philosophy held up under market pressure, and where it didn't.</p>
+
+        <h2>May 2026: Facts of the Month</h2>
+
+        <div class="data-card">
+          <h3>Structure (<a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-ii-a-25-year-master-plan/" target="_blank">Level 2 Manifesto</a>)</h3>
+          <div class="structure-grid">
+            <div class="structure-col">
+              <h4>Target benchmark by structure</h4>
+              <ul>
+                <li><span>Alpha</span><span class="val">30%</span></li>
+                <li><span>Beta</span><span class="val">30%</span></li>
+                <li><span>Dividend Growth (Divrost)</span><span class="val">40%</span></li>
+              </ul>
+            </div>
+            <div class="structure-col">
+              <h4>Actual in May 2026</h4>
+              <ul>
+                <li><span>Alpha</span><span class="val">39%</span></li>
+                <li><span>Beta</span><span class="val">28%</span></li>
+                <li><span>Divrost</span><span class="val">33%</span></li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin-top:18px;font-size:15px;color:var(--muted);margin-bottom:0;">Compared to April, we're gradually executing the Architect's order: Alpha block is decreasing, Beta and Divrost are carefully being pulled toward target weights.</p>
+        </div>
+
+        <h2>Rebalancing</h2>
+
+        <div class="data-card">
+          <h3>Trades</h3>
+          <div class="trades-grid">
+            <div class="trades-col buys">
+              <h4>Purchases</h4>
+              <span class="block-label">Alpha Block</span>
+              <ul>
+                <li>AAPL — 100</li>
+              </ul>
+              <span class="block-label">Beta Block</span>
+              <ul>
+                <li>VOO — 200</li>
+              </ul>
+              <span class="block-label">Dividend Growth Block</span>
+              <ul>
+                <li>ADP — 10</li>
+                <li>CAT — 16</li>
+                <li>ERIE — 10</li>
+                <li>DPZ — 10</li>
+                <li>V — 10</li>
+              </ul>
+            </div>
+            <div class="trades-col sells">
+              <h4>Sales</h4>
+              <span class="block-label">Alpha Block</span>
+              <ul>
+                <li>CRWD — 100</li>
+                <li>META — 100</li>
+                <li>MSFT — 100</li>
+                <li>TSLA — 100</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2>How This Looks Through the Manifesto Lens</h2>
+
+        <p>Here, as in April, the main idea is bringing the portfolio to the right structure (<a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-ii-a-25-year-master-plan/" target="_blank">Level 2 Manifesto</a>). Structure matters more than local P&amp;L: when the Architect makes a decision, their main task is reducing risk on the eternal portfolio (25+ years). This means structural weights are more significant than local realised returns on individual trades.</p>
+        <p>From this:</p>
+        <ul>
+          <li>Selling 100 META as an over-weighted position — structurally correct decision: we continued reducing risk on a name below entry price. From the Architect's view, this isn't an error but meeting Alpha block limits.</li>
+          <li>Selling CRWD — executing the Architect's will to fix structure and reduce concentration. From entry/exit technique perspective, this decision might turn out not ideal: the position remains in a strong uptrend, but the Manifesto explicitly fixes that market timing isn't the system's competence and can't be the basis for decisions.</li>
+          <li>Selling MSFT — reducing position to accepted limits. Probably, the reduction looks counterintuitive against the software sector reversal, but trying to "catch up" with the move and guess timing contradicts Stoic discipline: for the system, it's more important to meet limits than argue with our own rules for potential upside.</li>
+          <li>Selling TSLA — a special case. Formally, the reduction lowers concentration in the Alpha block, but in essence, this is an error at <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-ii-a-25-year-master-plan/" target="_blank">Level 2</a>: Tesla as a strategic name should be in the Stoic Core portfolio, and Tudor tactics trying to "buy back lower" can't be transferred to the conservative contour. Here we've recorded transferring a trader's reflex into a Stoic mandate, which directly violates the Stoic/Tudor level framework.</li>
+          <li>Buying Apple — executing the Architect's decision on the limit for this position.</li>
+        </ul>
+        <p>From the upper Manifesto levels (<a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Levels 1</a>–<a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-ii-a-25-year-master-plan/" target="_blank">2</a>), the Architect continued correctly bringing structure to target weights in May: limits by block were carefully adjusted. The TSLA error isn't a structural logic failure but a mandate violation at execution level: the Operator tried to apply aggressive Tudor tactics inside Stoic Core.</p>
+
+        <h2>May Errors Through the Manifesto and Tversky–Kahneman Lens</h2>
+
+        <div class="error-card level1">
+          <span class="error-tag"><a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Level 1</a> Error · Behavioural Gap</span>
+          <h3>First Error: Consciousness Distortion, Behaviour Gap, <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Level 1 Manifesto</a></h3>
+          <p>The Operator transferred trading strategy tactics into the main portfolio and on one day, May 9, executed a series of trimmings on the main account.</p>
+          <p>By Manifesto, this is <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Level 1</a> — consciousness, and this is always according to Epictetus: it was up to him whether to do this or not. The Operator didn't separate the contours: Stoic Core (long-term) and Tudor (tactical). Transferring trader tactics into the main portfolio is a <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Level 1</a> violation because the Operator didn't check: "Is this the Architect's decision or the Operator's?"</p>
+          <p>By Tversky–Kahneman, this is framing effect — a decision is made in one context (trading) but applied in another (long-term portfolio). This is the curse of knowledge: the Operator knows trading tactics and transfers them automatically without checking applicability.</p>
+        </div>
+
+        <div class="error-card level34">
+          <span class="error-tag"><a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-iv-annual-execution-dossier-2026-stoic-core-interactive/" target="_blank">Level 4</a> Error · Execution</span>
+          <h3>Second Error: Execution Atonality, <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-iv-annual-execution-dossier-2026-stoic-core-interactive/" target="_blank">Level 4 Manifesto</a></h3>
+          <p>The Operator forgot to remove stops on a rising market, as a result part of the position was sold on a strongly rising market, and noticed this only in the report the next day.</p>
+          <p>By Manifesto, this is <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-iv-annual-execution-dossier-2026-stoic-core-interactive/" target="_blank">Level 4</a> — execution. But more importantly <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Level 1</a>: on the main account, such stops shouldn't exist at all. The Operator didn't check stops before trading started and noticed this only in the report. According to Epictetus, this is atheoreticality — absence of understanding the principle, which is why the Operator didn't apply basic control.</p>
+          <p>By Tversky–Kahneman, this is habit bias — the Operator acts by habit without checking applicability. This is illusion of control — the Operator assumes everything is under control but doesn't check. This is delayed awareness — the error is noticed only after the event.</p>
+        </div>
+
+        <h2>Month Results and TWR</h2>
+
+        <p>Overall, May went well: TWR for the month was 11.22%, the market continues to perform but its breadth remains low at around sixty percent. On one hand, this is a signal that only a few sectors are growing, but on the other, you can assume the remaining sectors will join and the rally may continue. For us, what matters more is:</p>
+        <ul>
+          <li>At structure level (<a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-ii-a-25-year-master-plan/" target="_blank">Level 2</a>), the Architect adjusted limits according to the Manifesto plan;</li>
+          <li>At <a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-i-philosophy-of-choice-epictetus-mission-scientific-mindset-fund-code/" target="_blank">Levels 1</a>–<a class="level-link" href="https://epictetus-fo.ghost.io/manifesto-level-iv-annual-execution-dossier-2026-stoic-core-interactive/" target="_blank">4</a>, the Manager clearly recognised two fixed errors in May, both on the Micron instrument;</li>
+          <li>At <a class="level-link" href="https://epictetus-fo.ghost.io/#/portal/signup" target="_blank">Level 5</a>, the Steward correctly recorded the violations.</li>
+        </ul>
+
+        <h2>Tudor vs Stoic Core Project (Tudor Match) — 36 Months, Start 01.01.2026</h2>
+
+        <p>So, the fifth month of the duel is complete. In May, TWR was 29.24% for Tudor vs 11.22% for Stoic Core. Total score for 2026: 41.79% vs 20.15%. As long as the strong trend in semiconductors continues, and software cyber security companies and databizs have joined, Tudor's advantage isn't due to the Operator's talent or their trading practices but the market regime itself.</p>
+        <p>The Stoic Core Architect confidently argues that "everything changes in 28 days" — Japanese proverb — and within 36 months until the duel ends, the score on the scoreboard will be different.</p>
+        <p>The Operator has already started thinking about trimming positions to not lose the accumulated result. TWR for the month and the year-to-date chart can be seen in the Archive.</p>
+
+        <div class="closing-note">
+          <p>Thanks everyone for reading. See you in early July.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>Disclaimer:</strong> This platform is for educational purposes only. We do not provide financial, investment, tax, or legal advice. All content is for informational purposes only and should not be considered as investment advice.
+    </div>
+  </footer>
+
+</body>
+</html>
